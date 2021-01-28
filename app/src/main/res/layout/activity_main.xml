@@ -53,31 +53,43 @@
 
         <TableRow>
             <Button
+                android:id="@+id/btn_select_emotion"
                 android:layout_marginStart="24dp"
                 android:layout_width="168dp"
                 android:layout_height="168dp"
                 android:text="감정 선택"
+                android:textSize="26sp"
+                android:textStyle="bold"
                 android:textColor="#707070"/>
             <Button
+                android:id="@+id/btn_emotion_state"
                 android:layout_marginStart="24dp"
                 android:layout_width="168dp"
                 android:layout_height="168dp"
                 android:text="현황"
+                android:textSize="26sp"
+                android:textStyle="bold"
                 android:textColor="#707070"/>
         </TableRow>
 
         <TableRow>
             <Button
+                android:id="@+id/btn_betting_emotion"
                 android:layout_marginStart="24dp"
                 android:layout_width="168dp"
                 android:layout_height="168dp"
                 android:text="베팅"
+                android:textSize="26sp"
+                android:textStyle="bold"
                 android:textColor="#707070"/>
             <Button
+                android:id="@+id/btn_emotion_graph"
                 android:layout_marginStart="24dp"
                 android:layout_width="168dp"
                 android:layout_height="168dp"
                 android:text="그래프"
+                android:textSize="26sp"
+                android:textStyle="bold"
                 android:textColor="#707070"/>
         </TableRow>
 
