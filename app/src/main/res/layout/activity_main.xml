@@ -6,6 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
+    <!-- 프로필 -->
+
     <ImageView
         android:id="@+id/image_profile"
         android:layout_width="128dp"
@@ -26,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="36sp"
         android:textStyle="bold"
-        android:textColor="#777"
+        android:textColor="#707070"
         android:text="홍길동" />
 
     <TextView
@@ -38,8 +40,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="24sp"
-        android:textColor="#777"
+        android:textColor="#707070"
         android:text="정보기술대학 컴퓨터공학부"/>
+
+    <!-- 메뉴 -->
 
     <TableLayout
         android:layout_marginTop="24dp"
@@ -49,28 +53,32 @@
 
         <TableRow>
             <Button
-                android:layout_marginStart="16dp"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:text="선택"/>
+                android:layout_marginStart="24dp"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:text="감정 선택"
+                android:textColor="#707070"/>
             <Button
-                android:layout_marginStart="16dp"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:text="선택"/>
+                android:layout_marginStart="24dp"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:text="현황"
+                android:textColor="#707070"/>
         </TableRow>
 
         <TableRow>
             <Button
-                android:layout_marginStart="16dp"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:text="선택"/>
+                android:layout_marginStart="24dp"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:text="베팅"
+                android:textColor="#707070"/>
             <Button
-                android:layout_marginStart="16dp"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:text="선택"/>
+                android:layout_marginStart="24dp"
+                android:layout_width="168dp"
+                android:layout_height="168dp"
+                android:text="그래프"
+                android:textColor="#707070"/>
         </TableRow>
 
     </TableLayout>
