@@ -47,13 +47,12 @@
 
     <!-- 메뉴 -->
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_select_emotion"
         android:layout_marginTop="32dp"
         android:layout_width="168dp"
         android:layout_height="168dp"
         android:background="@drawable/image_main_btn"
-
         android:text="감정 선택"
         android:textColor="#152F68"
         android:textSize="20sp"
@@ -62,10 +61,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_emotion_state"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_emotion_state"
         android:layout_width="168dp"
         android:layout_height="168dp"
+        android:background="@drawable/image_main_btn"
         android:text="현황"
         android:textColor="#152F68"
         android:textSize="20sp"
@@ -74,11 +74,12 @@
         app:layout_constraintStart_toEndOf="@+id/btn_select_emotion"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_betting_emotion"
         android:layout_marginTop="12dp"
         android:layout_width="168dp"
         android:layout_height="168dp"
+        android:background="@drawable/image_main_btn"
         android:text="베팅"
         android:textColor="#152F68"
         android:textSize="20sp"
@@ -87,10 +88,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_emotion_graph"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_emotion_graph"
         android:layout_width="168dp"
         android:layout_height="168dp"
+        android:background="@drawable/image_main_btn"
         android:text="그래프"
         android:textColor="#152F68"
         android:textSize="20sp"
