@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/image_temp_profile"/>
+        android:src="@drawable/img_temp_profile"/>
 
     <TextView
         android:id="@+id/text_name"
@@ -53,7 +53,7 @@
         android:paddingTop="96dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/image_main_btn"
+        android:background="@drawable/img_main_btn"
         android:text="감정선택"
         android:textColor="#152F68"
         android:textSize="20sp"
@@ -67,7 +67,7 @@
         android:paddingTop="96dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/image_main_btn"
+        android:background="@drawable/img_main_btn"
         android:text="현황"
         android:textColor="#152F68"
         android:textSize="20sp"
@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="@drawable/image_main_btn"
+        android:background="@drawable/img_main_btn"
         android:paddingTop="96dp"
         android:text="베팅"
         android:textColor="#152F68"
@@ -96,7 +96,7 @@
         android:paddingTop="96dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/image_main_btn"
+        android:background="@drawable/img_main_btn"
         android:text="그래프"
         android:textColor="#152F68"
         android:textSize="20sp"
