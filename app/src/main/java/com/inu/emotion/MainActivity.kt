@@ -18,14 +18,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_betting_emotion).setOnClickListener(clickListener)
     }
 
-    /* TODO : 메뉴
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-    */
-
     inner class BtnClickListener : View.OnClickListener {
         override fun onClick(view: View?) {
             val intent = when(view!!.id) {
