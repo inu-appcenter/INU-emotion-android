@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InuEmotion">
-        <activity android:name=".SelectEmotionActivity"></activity>
+        <activity android:name=".SelectElement"></activity>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".BettingTemperatureActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SelectEmotionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
