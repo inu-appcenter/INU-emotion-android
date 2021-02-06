@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bar_size">200dp</dimen>
+    <dimen name="bar_stroke_size">64dp</dimen>
+    <dimen name="bar_textSize">20sp</dimen>
+</resources>

@@ -19,21 +19,22 @@
         android:layout_marginTop="32dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="오늘 기분 온도는?"
+        android:text="오늘 기분 온도는?"
         android:textColor="@color/black"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/logo"/>
 
-    <SeekBar
+    <com.inu.emotion.TemperatureBar
         android:id="@+id/thermometer"
         android:layout_marginTop="32dp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        style="@android:style/Widget.SeekBar"
         android:max="100"
-        android:progress="70"/>
+        android:progress="60"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
