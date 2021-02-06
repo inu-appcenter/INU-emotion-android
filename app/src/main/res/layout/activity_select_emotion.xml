@@ -9,11 +9,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="감정 선택 화면"
+        android:textSize="36sp"
         android:textAlignment="center"
-        android:textSize="24sp"
-        android:textColor="@color/purple_700"
-        android:text="감정 선택 화면"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
