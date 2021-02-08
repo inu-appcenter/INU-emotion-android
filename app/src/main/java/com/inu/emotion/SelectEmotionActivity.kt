@@ -1,17 +1,19 @@
 package com.inu.emotion
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.SeekBar
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class SelectEmotionActivity : AppCompatActivity() {
+    var temperatureBar : TemperatureBar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_emotion)
 
-        findViewById<com.inu.emotion.TemperatureBar>(R.id.thermometer).setOnSeekBarChangeListener(OnTemperatureBarChangeListener())
+        temperatureBar = findViewById(R.id.thermometer)
+        temperatureBar?.setOnSeekBarChangeListener(OnTemperatureBarChangeListener())
     }
 
     inner class OnTemperatureBarChangeListener : SeekBar.OnSeekBarChangeListener {
@@ -19,8 +21,8 @@ class SelectEmotionActivity : AppCompatActivity() {
 
         }
 
-        override fun onStopTrackingTouch(p0: SeekBar?) {
-            Toast.makeText(this@SelectEmotionActivity, "I am Groot!", Toast.LENGTH_LONG).show()
+        override fun onStopTrackingTouch(view: SeekBar?) {
+            temperatureBar?.onChanged()
         }
 
         override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {

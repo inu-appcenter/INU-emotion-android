@@ -5,11 +5,18 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
+import android.util.Log
 
 class TemperatureBar @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet
 ) : androidx.appcompat.widget.AppCompatSeekBar(context, attrs) {
+
+    fun onChanged() {
+        Log.i("SelectEmotionActivitiy : ", "custom view's onChanged() called!!")
+        invalidate()
+        // TODO : 온도 수치에 따른 감정 상태 출력 - 여기 or onDraw() 메서드
+    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
@@ -17,11 +24,22 @@ class TemperatureBar @JvmOverloads constructor(
         var height = MeasureSpec.getSize(heightMeasureSpec)
 
         if (MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.AT_MOST) {
-            width = resources.getDimensionPixelSize(R.dimen.bar_stroke_size)
+            width = resources.getDimensionPixelSize(R.dimen.bar_size)
         }
         if (MeasureSpec.getMode(heightMeasureSpec) == MeasureSpec.AT_MOST) {
-            height = resources.getDimensionPixelSize(R.dimen.bar_size)
+            // 로테이션 때문에 이상하게 적용됨.
+            height = resources.getDimensionPixelSize(R.dimen.bar_stroke_size)
         }
+
+        var i : Int
+        when(this.rotation) {
+            90F, 270F -> {
+                var temp = width
+                width = height
+                height = temp
+            }
+        }
+
         setMeasuredDimension(width, height)
     }
 
@@ -36,7 +54,10 @@ class TemperatureBar @JvmOverloads constructor(
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = resources.getDimensionPixelSize(R.dimen.bar_stroke_size).toFloat()
         paint.color = Color.RED
-        canvas?.drawLine(0F, 0F, 0F, 500F, paint)
+        val middle = (strokeSize / 2).toFloat()
+        val start = 50F
+        var curTemperature = start + (size - 90) * (this.progress / 100F)
+        canvas?.drawLine(start, middle, curTemperature, middle, paint)
 
 
         // text 그리기
