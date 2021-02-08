@@ -54,8 +54,8 @@ class TemperatureBar @JvmOverloads constructor(
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = resources.getDimensionPixelSize(R.dimen.bar_stroke_size).toFloat()
         paint.color = Color.RED
-        val middle = (strokeSize / 2).toFloat()
-        val start = 50F
+        val middle = (strokeSize / 2).toFloat() // y 좌표 보정
+        val start = 50F // x 좌표 보정
         var curTemperature = start + (size - 90) * (this.progress / 100F)
         canvas?.drawLine(start, middle, curTemperature, middle, paint)
 
@@ -64,12 +64,32 @@ class TemperatureBar @JvmOverloads constructor(
         paint.textSize = resources.getDimensionPixelSize(R.dimen.bar_textSize).toFloat()
         paint.strokeWidth = 8f
         paint.color = Color.BLACK
-        val txt = progress.toString()
+        var txt = this.progress.toString()
         canvas?.drawText(
-            txt,
-            (width / 2 - (paint.measureText(txt) / 2).toInt()).toFloat(),
-            (height / 2 - (paint.descent() + paint.ascent()) / 2),
-            paint
+                txt,
+                width.toFloat() / 2,
+                height.toFloat() / 2 - 15F,
+                paint
+        )
+
+        txt = when {
+            (this.progress <= 10) -> "슬픔"
+            (progress <= 20) -> "짜증"
+            (progress <= 30) -> "센치"
+            (progress <= 40) -> "심심"
+            (progress <= 50) -> "만족"
+            (progress <= 60) -> "좋음"
+            (progress <= 70) -> "기쁨"
+            (progress <= 80) -> "행복"
+            (progress <= 90) -> "나쁨"
+            (progress <= 100) -> "분노"
+            else -> "Error!!"
+        }
+        canvas?.drawText(
+                txt,
+                width.toFloat() / 2 - 5F,
+                height.toFloat(),
+                paint
         )
     }
 
