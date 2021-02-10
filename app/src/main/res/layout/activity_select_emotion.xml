@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/logo"
@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="72dp"
             android:src="@drawable/img_app_center_logo"
+            android:contentDescription="@string/app_center_logo"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
@@ -25,7 +26,7 @@
             android:layout_marginTop="100dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="오늘 기분 온도는?"
+            android:text="@string/title_select_emotion"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -38,6 +39,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:src="@drawable/img_background_thermometer"
+            android:contentDescription="@string/thermometer_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -45,12 +47,12 @@
         <!-- 온도 텍스트 뷰 -->
         <TextView
             android:id="@+id/tv_temperature"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="52dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0ºC"
+            android:text="@string/temperature"
             android:textColor="@color/white"
-            android:textSize="36sp"
+            android:textSize="32sp"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="@id/background_thermometer"/>
 
@@ -77,6 +79,7 @@
             android:layout_width="36dp"
             android:layout_height="wrap_content"
             android:src="@drawable/img_divider"
+            android:contentDescription="@string/divider"
             app:layout_constraintTop_toTopOf="@id/left_txt1"
             app:layout_constraintEnd_toEndOf="@id/layout_left"/>
         <ImageView
@@ -84,6 +87,7 @@
             android:layout_width="20dp"
             android:layout_height="200dp"
             android:src="@drawable/img_divider"
+            android:contentDescription="@string/divider"
             app:layout_constraintTop_toTopOf="@id/left_txt1"
             app:layout_constraintEnd_toEndOf="@id/layout_left"/>
 
@@ -93,6 +97,7 @@
             android:layout_width="36dp"
             android:layout_height="wrap_content"
             android:src="@drawable/img_divider"
+            android:contentDescription="@string/divider"
             app:layout_constraintTop_toTopOf="@id/right_txt1"
             app:layout_constraintStart_toStartOf="@id/layout_right"/>
         <ImageView
@@ -100,6 +105,7 @@
             android:layout_width="20dp"
             android:layout_height="200dp"
             android:src="@drawable/img_divider"
+            android:contentDescription="@string/divider"
             app:layout_constraintTop_toTopOf="@id/right_txt1"
             app:layout_constraintStart_toStartOf="@id/layout_right"/>
 
@@ -110,51 +116,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="분노"
+            android:text="@string/emotion_angry"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/background_thermometer"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/background_thermometer" />
         <TextView
             android:id="@+id/left_txt2"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="행복"
+            android:text="@string/emotion_happy"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/left_txt1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/background_thermometer" />
         <TextView
             android:id="@+id/left_txt3"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="좋음"
+            android:text="@string/emotion_good"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/left_txt2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/background_thermometer" />
         <TextView
             android:id="@+id/left_txt4"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="심심"
+            android:text="@string/emotion_bored"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/left_txt3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/background_thermometer" />
         <TextView
             android:id="@+id/left_txt5"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="짜증"
+            android:text="@string/emotion_annoyed"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/left_txt4"
             app:layout_constraintStart_toStartOf="parent"
@@ -166,51 +172,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="나쁨"
+            android:text="@string/emotion_bad"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/background_thermometer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/background_thermometer" />
         <TextView
             android:id="@+id/right_txt2"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="기쁨"
+            android:text="@string/emotion_joy"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/right_txt1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/background_thermometer" />
         <TextView
             android:id="@+id/right_txt3"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="만족"
+            android:text="@string/emotion_satisfied"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/right_txt2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/background_thermometer" />
         <TextView
             android:id="@+id/right_txt4"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="센치"
+            android:text="@string/emotion_sentimental"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/right_txt3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/background_thermometer" />
         <TextView
             android:id="@+id/right_txt5"
-            android:layout_marginTop="71dp"
+            android:layout_marginTop="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="슬픔"
+            android:text="@string/emotion_sad"
             android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/right_txt4"
             app:layout_constraintEnd_toEndOf="parent"

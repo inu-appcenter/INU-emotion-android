@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">inu emotion</string>
+
+    <!-- activity_select_emotion.xml -->
+    <string name="title_select_emotion">오늘 기분 온도는?</string>
+    <string name="emotion_angry">분노</string>
+    <string name="emotion_bad">나쁨</string>
+    <string name="emotion_happy">행복</string>
+    <string name="emotion_joy">기쁨</string>
+    <string name="emotion_good">좋음</string>
+    <string name="emotion_satisfied">만족</string>
+    <string name="emotion_bored">심심</string>
+    <string name="emotion_sentimental">센치</string>
+    <string name="emotion_annoyed">짜증</string>
+    <string name="emotion_sad">슬픔</string>
+    <string name="temperature">0ºC</string>
+    <string name="app_center_logo">앱센터 로고</string>
+    <string name="divider">구분선</string>
+    <string name="thermometer_background">온도계 배경</string>
 </resources>
