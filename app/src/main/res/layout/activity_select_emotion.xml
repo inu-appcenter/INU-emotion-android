@@ -1,40 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SelectEmotionActivity">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_marginTop="32dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/img_temp_profile"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_marginTop="32dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="오늘 기분 온도는?"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/logo"/>
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/img_temp_profile"/>
 
-    <com.inu.emotion.TemperatureBar
-        android:id="@+id/thermometer"
-        android:layout_marginTop="32dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="60"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="오늘 기분 온도는?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/logo"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!--SeekBar
+            android:id="@+id/thermometer"
+            android:layout_marginTop="32dp"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:max="100"
+            android:progress="60"
+            android:progressDrawable="@drawable/seekbar"
+            android:thumb="@null"
+            android:rotation="270"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/-->
+
+        <ImageView
+            android:layout_marginTop="32dp"
+            android:layout_width="144dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_background_thermometer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <com.inu.emotion.TemperatureBar
+            android:id="@+id/thermometer"
+            android:layout_marginTop="197dp"
+            android:layout_width="@dimen/bar_size"
+            android:layout_height="@dimen/bar_stroke_size"
+            android:max="100"
+            android:progress="60"
+            android:rotation="270"
+            android:thumb="@null"
+            android:progressDrawable="@drawable/seekbar"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
