@@ -13,8 +13,9 @@
     <string name="emotion_sentimental">센치</string>
     <string name="emotion_annoyed">짜증</string>
     <string name="emotion_sad">슬픔</string>
-    <string name="temperature">0ºC</string>
+    <string name="temperature">50ºC</string>
     <string name="app_center_logo">앱센터 로고</string>
     <string name="divider">구분선</string>
     <string name="thermometer_background">온도계 배경</string>
+    <string name="select_temperature">확인</string>
 </resources>
