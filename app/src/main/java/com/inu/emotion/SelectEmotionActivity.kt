@@ -1,12 +1,15 @@
 package com.inu.emotion
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.lang.Exception
 
 class SelectEmotionActivity : AppCompatActivity() {
     var temperatureBar : TemperatureBar? = null
@@ -17,6 +20,11 @@ class SelectEmotionActivity : AppCompatActivity() {
 
         temperatureBar = findViewById(R.id.thermometer)
         temperatureBar?.setOnSeekBarChangeListener(OnTemperatureBarChangeListener())
+
+        findViewById<Button>(R.id.btn_select_temperature).setOnClickListener {
+            val intent = Intent(it.context, SelectElementActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     inner class OnTemperatureBarChangeListener : SeekBar.OnSeekBarChangeListener {
