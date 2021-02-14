@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dark_gray">#99000000</color>
+    <color name="background_color">#FAF3EB</color>
 
     <!-- 온도계 색깔 -->
     <color name="under_20">#8BC8FF</color>

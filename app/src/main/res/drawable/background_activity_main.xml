@@ -8,7 +8,7 @@
     </item>
 
     <item
-        android:height="128dp">
+        android:height="192dp">
         <shape>
             <solid
                 android:color="#FAF3EB"/>

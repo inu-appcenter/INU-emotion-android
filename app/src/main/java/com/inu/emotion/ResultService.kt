@@ -7,5 +7,5 @@ import retrofit2.http.Query
 interface ResultService {
     var temperature : Int
     @GET("result")
-    fun getResult(): Call<ResultService?>
+    fun getResult(): Call<ResultEntity?>
 }
