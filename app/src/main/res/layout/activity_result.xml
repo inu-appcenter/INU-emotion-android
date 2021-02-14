@@ -7,9 +7,10 @@
     tools:context=".ResultActivity">
 
     <TextView
+        android:id="@+id/tv_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="결과 화면"
+        android:text="결과 없음"
         android:textSize="36sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
