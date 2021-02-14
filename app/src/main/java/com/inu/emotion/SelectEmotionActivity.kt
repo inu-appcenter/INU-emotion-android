@@ -4,11 +4,14 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import retrofit2.Call
+import retrofit2.Response
 import java.lang.Exception
 
 class SelectEmotionActivity : AppCompatActivity() {
@@ -22,13 +25,30 @@ class SelectEmotionActivity : AppCompatActivity() {
         temperatureBar?.setOnSeekBarChangeListener(OnTemperatureBarChangeListener())
 
         findViewById<Button>(R.id.btn_select_temperature).setOnClickListener {
+            val retrofitFactory = RetrofitFactory().create()
+            val call = retrofitFactory.postResult(temperatureBar!!.progress)
+            call.enqueue(object : retrofit2.Callback<Unit> {
+                override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
+                    if(response!!.isSuccessful) {
+                        Log.i("SelectEmotionActivity : ", "post 성공")
+                    }
+                    else {
+                        Log.e("연결 실패 : ", "error code : " + response.code())
+                    }
+                }
+
+                override fun onFailure(call: Call<Unit>?, t: Throwable?) {
+                    t?.printStackTrace()
+                    Log.e("SelectEmotionActivity : ", "실패!!")
+                }
+            })
             val intent = Intent(it.context, SelectElementActivity::class.java)
-            startActivity(intent)
+            this.startActivity(intent)
         }
     }
 
     inner class OnTemperatureBarChangeListener : SeekBar.OnSeekBarChangeListener {
-        var preId = R.id.left_txt1
+        var preId = R.id.right_txt3
 
         override fun onStartTrackingTouch(p0: SeekBar?) {
 

@@ -1,11 +1,13 @@
 package com.inu.emotion
 
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ResultService {
-    var temperature : Int
     @GET("result")
     fun getResult(): Call<ResultEntity?>
+
+    @FormUrlEncoded
+    @POST("temp")
+    fun postResult(@Field("temp") message: Int) : Call<Unit>
 }
