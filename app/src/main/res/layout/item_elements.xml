@@ -3,7 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:toolsNs="http://schemas.android.com/tools">
+    xmlns:toolsNs="http://schemas.android.com/tools"
+    android:elevation="2dp"
+    android:background="@null"
+    android:outlineProvider="bounds">
 
     <!-- 배경 색을 지정을 위해 억지로 넣은 레이아웃 -->
     <androidx.constraintlayout.widget.ConstraintLayout

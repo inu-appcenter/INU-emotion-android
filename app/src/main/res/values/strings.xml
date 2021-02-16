@@ -18,4 +18,8 @@
     <string name="divider">구분선</string>
     <string name="thermometer_background">온도계 배경</string>
     <string name="ok">확인</string>
+
+    <!-- activity_result -->
+    <string name="title_result">INU 지금 기분 온도는?</string>
+    <string name="err_server">server</string>
 </resources>
