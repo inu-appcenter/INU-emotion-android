@@ -1,8 +1,12 @@
 package com.inu.emotion
 
+import android.content.Context
+import android.content.res.Resources
+import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
 class SelectElementActivity : AppCompatActivity() {
@@ -12,6 +16,7 @@ class SelectElementActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.elements)
         val dataSet = insertDataSet()
+        recyclerView.addItemDecoration(ItemDecoration(this))
         recyclerView.adapter = ElementAdapter(dataSet)
     }
 
@@ -30,5 +35,13 @@ class SelectElementActivity : AppCompatActivity() {
                 ElementAdapter.ElementVO("기타",
                         arrayListOf("업무", "날씨", "교통", "행운", "불운", "그냥")),
         )
+    }
+
+    class ItemDecoration(val context: Context) : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+            super.getItemOffsets(outRect, view, parent, state)
+
+            outRect.bottom = context.resources.getDimensionPixelSize(R.dimen.item_decoration_space)
+        }
     }
 }

@@ -3,4 +3,5 @@
     <dimen name="bar_size">350dp</dimen>
     <dimen name="bar_stroke_size">50dp</dimen>
     <dimen name="bar_textSize">20sp</dimen>
+    <dimen name="item_decoration_space">15dp</dimen>
 </resources>

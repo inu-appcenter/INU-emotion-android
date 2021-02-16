@@ -5,27 +5,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:toolsNs="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/img_element"
-        android:layout_width="wrap_content"
+    <!-- 배경 색을 지정을 위해 억지로 넣은 레이아웃 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_background"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/img_element"/>
+        android:padding="12dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        toolsNs:text="분류"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/img_element"
-        app:layout_constraintBottom_toBottomOf="@id/img_element"
-        app:layout_constraintStart_toEndOf="@id/img_element"/>
+        <ImageView
+            android:id="@+id/img_element"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/img_element"/>
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            toolsNs:text="분류"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@id/img_element"
+            app:layout_constraintBottom_toBottomOf="@id/img_element"
+            app:layout_constraintStart_toEndOf="@id/img_element"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- 레이아웃을 위한 뷰 -->
     <TextView
@@ -41,8 +52,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/img_element">
+        app:layout_constraintTop_toBottomOf="@id/layout_background">
 
         <TableRow
             android:layout_width="match_parent"
@@ -131,7 +141,7 @@
                 android:background="@drawable/border_element"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                toolsNs:text="요소111111111"/>
+                toolsNs:text="요소"/>
         </TableRow>
 
         <!--    가로 길이 비율이 글자수의 영향을 받아서
