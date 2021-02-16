@@ -25,9 +25,11 @@
             android:src="@drawable/img_app_center_logo"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/elements"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/background_top"/>
+            app:layout_constraintTop_toBottomOf="@id/background_top"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
