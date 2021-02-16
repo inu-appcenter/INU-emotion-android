@@ -24,29 +24,21 @@ class SelectEmotionActivity : AppCompatActivity() {
         temperatureBar = findViewById(R.id.thermometer)
         temperatureBar?.setOnSeekBarChangeListener(OnTemperatureBarChangeListener())
 
+        // 확인 버튼 클릭
         findViewById<Button>(R.id.btn_select_temperature).setOnClickListener {
-            val retrofitFactory = RetrofitFactory().create()
-            val call = retrofitFactory.postResult(temperatureBar!!.progress)
-            call.enqueue(object : retrofit2.Callback<Unit> {
-                override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
-                    if(response!!.isSuccessful) {
-                        Log.i("SelectEmotionActivity : ", "post 성공")
-                    }
-                    else {
-                        Log.e("연결 실패 : ", "error code : " + response.code())
-                    }
-                }
-
-                override fun onFailure(call: Call<Unit>?, t: Throwable?) {
-                    t?.printStackTrace()
-                    Log.e("SelectEmotionActivity : ", "실패!!")
-                }
-            })
             val intent = Intent(it.context, SelectElementActivity::class.java)
-            this.startActivity(intent)
+            intent.putExtra("temperature", temperatureBar!!.progress)
+            this.startActivityForResult(intent, 10)
         }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == 10) finish()
+    }
+
+    // 온도계 터치
     inner class OnTemperatureBarChangeListener : SeekBar.OnSeekBarChangeListener {
         var preId = R.id.right_txt3
 

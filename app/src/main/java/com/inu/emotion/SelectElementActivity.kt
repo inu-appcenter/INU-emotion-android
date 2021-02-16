@@ -1,23 +1,54 @@
 package com.inu.emotion
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import retrofit2.Call
+import retrofit2.Response
 
 class SelectElementActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_element)
 
+        // 리사이클러뷰 설정
         val recyclerView = findViewById<RecyclerView>(R.id.elements)
         val dataSet = insertDataSet()
         recyclerView.addItemDecoration(ItemDecoration(this))
         recyclerView.adapter = ElementAdapter(dataSet)
+
+        // 버튼 클릭
+        findViewById<Button>(R.id.btn_ok).setOnClickListener {
+            // 서버로 데이터 전송
+            val retrofitFactory = RetrofitFactory().create()
+            val temperature = intent.getIntExtra("temp", 50)
+            val call = retrofitFactory.postResult(temperature)
+            call.enqueue(object : retrofit2.Callback<Unit> {
+                override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
+                    if(response!!.isSuccessful) {
+                        Log.i("SelectEmotionActivity : ", "post 성공")
+                    }
+                    else {
+                        Log.e("연결 실패 : ", "error code : " + response.code())
+                    }
+                }
+
+                override fun onFailure(call: Call<Unit>?, t: Throwable?) {
+                    t?.printStackTrace()
+                    Log.e("SelectEmotionActivity : ", "연결 실패 (서버쪽 문제일 가능성이 높음)")
+                }
+            })
+
+            // 메인화면으로 이동
+            finish()
+        }
     }
 
     private fun insertDataSet() : ArrayList<ElementAdapter.ElementVO> {
