@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.inu.emotion">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InuEmotion"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SelectElementActivity"></activity>
+        <activity android:name=".GraphActivity"/>
+        <activity android:name=".SelectElementActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".BettingTemperatureActivity" />
         <activity android:name=".LoginActivity" />

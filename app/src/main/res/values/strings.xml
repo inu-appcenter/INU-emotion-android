@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">inu emotion</string>
 
+    <!-- activity_main.xml -->
+    <string name="main_background">배경</string>
+    <string name="img_profile">프로필 사진</string>
+    <string name="btn_select_emotion">감정선택</string>
+    <string name="btn_current">현황</string>
+    <string name="btn_betting">베팅</string>
+    <string name="btn_graph">그래프</string>
+
     <!-- activity_select_emotion.xml -->
     <string name="title_select_emotion">오늘 기분 온도는?</string>
     <string name="emotion_angry">분노</string>
@@ -19,7 +27,15 @@
     <string name="thermometer_background">온도계 배경</string>
     <string name="ok">확인</string>
 
-    <!-- activity_result -->
+    <!-- activity_result.xml -->
     <string name="title_result">INU 지금 기분 온도는?</string>
     <string name="err_server">server</string>
+    <string name="btn_ranking">랭킹 보기</string>
+
+    <!-- activity_betting.xml -->
+    <string name="information">준비중입니다.</string>
+
+    <!-- item_element.xml -->
+    <string name="ic_category">아이콘</string>
+    <string name="space">                                                  </string>
 </resources>

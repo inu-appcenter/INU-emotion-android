@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/background_activity_main">
 
         <ImageView
@@ -19,10 +19,10 @@
             android:background="@drawable/background_activity_main"
             app:layout_constraintTop_toTopOf="parent"
             android:elevation="3dp"
-            android:outlineProvider="bounds"/>
+            android:outlineProvider="bounds"
+            android:contentDescription="@string/img_profile"/>
 
         <!-- 프로필 -->
-
         <ImageView
             android:id="@+id/image_profile"
             android:layout_width="128dp"
@@ -32,7 +32,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:elevation="3dp"
-            android:src="@drawable/img_temp_profile"/>
+            android:src="@drawable/img_temp_profile"
+            android:contentDescription="@string/main_background"/>
 
         <TextView
             android:id="@+id/text_name"
@@ -68,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/img_main_btn"
-            android:text="감정선택"
+            android:text="@string/btn_select_emotion"
             android:textColor="#152F68"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -82,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/img_main_btn"
-            android:text="현황"
+            android:text="@string/btn_current"
             android:textColor="#152F68"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -97,7 +98,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/img_main_btn"
             android:paddingTop="96dp"
-            android:text="베팅"
+            android:text="@string/btn_betting"
             android:textColor="#152F68"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -111,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/img_main_btn"
-            android:text="그래프"
+            android:text="@string/btn_graph"
             android:textColor="#152F68"
             android:textSize="20sp"
             android:textStyle="bold"

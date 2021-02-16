@@ -24,7 +24,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/img_element"/>
+            android:src="@drawable/img_element"
+            android:contentDescription="@string/ic_category"/>
 
         <TextView
             android:id="@+id/category"
@@ -65,7 +66,7 @@
                 android:id="@+id/element1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="20dp"
+                android:paddingHorizontal="20dp"
                 android:paddingVertical="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/border_element"
@@ -78,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-1dp"
-                android:paddingStart="20dp"
+                android:paddingHorizontal="20dp"
                 android:paddingVertical="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/border_element"
@@ -95,7 +96,7 @@
                 android:id="@+id/element3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="20dp"
+                android:paddingHorizontal="20dp"
                 android:paddingVertical="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/border_element"
@@ -108,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-1dp"
-                android:paddingStart="20dp"
+                android:paddingHorizontal="20dp"
                 android:paddingVertical="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/border_element"
@@ -125,7 +126,7 @@
                 android:id="@+id/element5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="20dp"
+                android:paddingHorizontal="20dp"
                 android:paddingVertical="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/border_element"
@@ -138,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="-1dp"
-                android:paddingStart="20dp"
+                android:paddingHorizontal="20dp"
                 android:paddingVertical="12dp"
                 android:layout_weight="1"
                 android:background="@drawable/border_element"
@@ -158,13 +159,13 @@
                 android:layout_height="0dp"
                 android:paddingVertical="12dp"
                 android:layout_weight="1"
-                android:text="                                                  "/>
+                android:text="@string/space"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="                                                  "/>
+                android:text="@string/space"/>
         </TableRow>
     </TableLayout>
 
