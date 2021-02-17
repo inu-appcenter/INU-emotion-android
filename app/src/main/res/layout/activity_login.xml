@@ -8,12 +8,41 @@
     android:background="@drawable/background_activity_main">
 
     <TextView
+        android:id="@+id/title_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="로그인 화면"
+        tools:text="로그인화면"
+        android:text="inu_temp"
+        android:textColor="#707070"
         android:textSize="36sp"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/input_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="36dp"
+        android:paddingVertical="14dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/border_input_text"
+        app:layout_constraintTop_toBottomOf="@+id/title_login"
+        android:hint = "닉네임"
+        android:textColor="#707070"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="36dp"
+        android:paddingVertical="14dp"
+        android:background="@drawable/border_input_text"
+        app:layout_constraintTop_toBottomOf="@+id/input_id"
+        android:hint = "비밀번호"
+        android:textColor="#707070"
+        android:inputType="textPassword"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
