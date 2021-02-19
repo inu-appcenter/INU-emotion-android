@@ -29,7 +29,11 @@ class SelectElementActivity : AppCompatActivity() {
             // 서버로 데이터 전송
             val retrofitFactory = RetrofitFactory().create()
             val temperature = intent.getIntExtra("temp", 50)
-            val call = retrofitFactory.postResult(temperature = temperature)
+            val elements = getElements((recyclerView.adapter as ElementAdapter).elements)
+            val call = retrofitFactory.postResult(temperature = temperature,
+                    element_first = elements[0],
+                    element_second = elements[1],
+                    element_third = elements[2])
             call.enqueue(object : retrofit2.Callback<Unit> {
                 override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
                     if(response!!.isSuccessful) {
@@ -49,6 +53,15 @@ class SelectElementActivity : AppCompatActivity() {
             // 메인화면으로 이동
             finish()
         }
+    }
+
+    // 선택항목이 3개가 아닐 시 널 문자를 추가하여 반환
+    fun getElements(elements: ArrayList<String?>) : ArrayList<String?> {
+        for (i in 0 until (3 - elements.size)) {
+            elements.add(null)
+        }
+
+        return elements
     }
 
     private fun insertDataSet() : ArrayList<ElementAdapter.ElementVO> {

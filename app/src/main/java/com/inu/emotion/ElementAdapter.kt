@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
         RecyclerView.Adapter<ElementAdapter.ViewHolder>() {
-    var elements : ArrayList<String> = ArrayList<String>()
+    var elements : ArrayList<String?> = ArrayList(3)
     var cntOfElement : Int = 0
     get() = elements.size
 
