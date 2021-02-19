@@ -33,6 +33,10 @@
     <string name="btn_ranking">랭킹 보기</string>
 
     <!-- activity_betting.xml -->
+    <string name="title_betting_temperature">INU 온도를 베팅하세요</string>
+    <string name="btn_betting_ok">베팅하기</string>
+
+    <!-- 준비중인 페이지 -->
     <string name="information">준비중입니다.</string>
 
     <!-- item_element.xml -->

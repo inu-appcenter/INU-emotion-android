@@ -42,7 +42,7 @@ class ResultActivity : AppCompatActivity() {
 
         // 랭킹 확인 버튼 클릭
         findViewById<Button>(R.id.btn_score_board).setOnClickListener {
-            Toast.makeText(applicationContext, "서비스 준비중입니다.", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "서비스 준비중입니다.", Toast.LENGTH_SHORT).show()
         }
     }
 }

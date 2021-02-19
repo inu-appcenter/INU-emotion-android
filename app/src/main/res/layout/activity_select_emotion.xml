@@ -245,6 +245,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ok"
+            android:textSize="18sp"
             android:textColor="@color/white"
             android:background="@drawable/img_background_button"
             app:layout_constraintTop_toBottomOf="@id/background_thermometer"
