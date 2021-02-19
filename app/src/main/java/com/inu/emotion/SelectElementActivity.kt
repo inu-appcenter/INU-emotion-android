@@ -29,7 +29,7 @@ class SelectElementActivity : AppCompatActivity() {
             // 서버로 데이터 전송
             val retrofitFactory = RetrofitFactory().create()
             val temperature = intent.getIntExtra("temp", 50)
-            val call = retrofitFactory.postResult(temperature)
+            val call = retrofitFactory.postResult(temperature = temperature)
             call.enqueue(object : retrofit2.Callback<Unit> {
                 override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
                     if(response!!.isSuccessful) {

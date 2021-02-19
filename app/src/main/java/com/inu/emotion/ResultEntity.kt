@@ -1,5 +1,6 @@
 package com.inu.emotion
 
 class ResultEntity {
-    var temperature : Int = 50
+    var todayMoodAvg : Int = 50
+    var elementRanking : String? = null
 }

@@ -28,8 +28,10 @@ class ResultActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ResultEntity?>, response: Response<ResultEntity?>) {
                 resultBody = response.body()
                 Log.i("ResultActivity : ", "성공")
-                temperatureBar.progress = resultBody!!.temperature
+                temperatureBar.progress = resultBody!!.todayMoodAvg
                 thermometer.text = temperatureBar.progress.toString() + "ºC"
+                // TODO : 요소 순위 출력
+                Log.i("ResultActivity : ", "server result - " + resultBody!!.elementRanking)
             }
 
             override fun onFailure(call: Call<ResultEntity?>, t: Throwable?) {
