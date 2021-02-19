@@ -238,7 +238,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_select_temperature"
+            android:id="@+id/btn_betting"
             android:layout_marginTop="24dp"
             android:paddingHorizontal="48dp"
             android:layout_width="wrap_content"

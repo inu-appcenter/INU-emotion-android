@@ -13,4 +13,8 @@ interface ResultService {
                    @Field("element_first") element_first: String? = null,
                    @Field("element_second") element_second: String? = null,
                    @Field("element_third") element_third: String? = null) : Call<Unit>
+
+    @FormUrlEncoded
+    @POST("betting")
+    fun postBetting(@Field("bet_mood") temperature: Int) : Call<Unit>
 }
