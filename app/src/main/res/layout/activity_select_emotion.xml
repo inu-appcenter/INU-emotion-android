@@ -101,7 +101,7 @@
             app:layout_constraintTop_toTopOf="@id/right_txt1"
             app:layout_constraintStart_toStartOf="@id/layout_right"/>
         <ImageView
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="55dp"
             android:layout_width="20dp"
             android:layout_height="200dp"
             android:src="@drawable/img_divider"

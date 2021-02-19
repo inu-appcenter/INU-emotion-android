@@ -45,7 +45,7 @@ class BettingTemperatureActivity : AppCompatActivity() {
 
     inner class OnBettingButtonClickListener : View.OnClickListener {
         override fun onClick(view: View?) {
-            Toast.makeText(view?.context, "준비중입니다.", Toast.LENGTH_SHORT)
+            Toast.makeText(view?.context, "준비중입니다.", Toast.LENGTH_SHORT).show()
 
             val retrofitFactory = RetrofitFactory().create()
             val call = retrofitFactory.postBetting(temperatureBar!!.progress)
