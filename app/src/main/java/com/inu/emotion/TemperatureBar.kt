@@ -41,7 +41,6 @@ class TemperatureBar constructor(
         val strokeSize = resources.getDimensionPixelSize(R.dimen.bar_stroke_size)
         val paint = Paint()
 
-
         // 막대 그리기
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = resources.getDimensionPixelSize(R.dimen.bar_stroke_size).toFloat()
