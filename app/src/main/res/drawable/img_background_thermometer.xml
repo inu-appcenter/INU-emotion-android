@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:width="72dp" android:height="500dp">
+    <item android:width="72dp" android:height="488dp">
         <shape android:shape="rectangle">
             <stroke android:width="2dp"
                 android:color="#707070"/>
             <corners android:radius="36dp"/>
         </shape>
     </item>
-    <item android:top="356dp" android:left="-36dp" android:right="-36dp">
+    <item android:top="344dp" android:left="-36dp" android:right="-36dp">
         <shape android:shape="oval">
             <stroke android:width="2dp"
                 android:color="#707070"/>
@@ -22,7 +22,7 @@
             <corners android:radius="36dp"/>
         </shape>
     </item>
-    <item android:top="372dp" android:left="-20dp" android:right="-20dp" android:bottom="16dp">
+    <item android:top="360dp" android:left="-20dp" android:right="-20dp" android:bottom="16dp">
         <shape android:shape="oval">
             <solid android:color="#8782E1" />
         </shape>
