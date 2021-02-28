@@ -25,13 +25,12 @@ class MainActivity : AppCompatActivity() {
     inner class BtnClickListener : View.OnClickListener {
         override fun onClick(view: View?) {
             val intent = when(view?.id) {
-                // TODO : 홈 화면에서 버튼 클릭 -> 화면 전환에 연결되는 액티비티를 지정
                 R.id.btn_select_emotion -> Intent(view.context, SelectEmotionActivity::class.java)
                 R.id.btn_result -> Intent(view.context, ResultActivity::class.java)
                 R.id.btn_betting_emotion -> Intent(view.context, BettingTemperatureActivity::class.java)
                 R.id.btn_emotion_graph -> {
                     Toast.makeText(applicationContext, "준비중입니다.", Toast.LENGTH_LONG).show()
-                    null
+                    Intent(view.context, SelectTemperatureActivity::class.java)
                 }
                 R.id.image_profile -> Intent(view.context, LoginActivity::class.java)
 
