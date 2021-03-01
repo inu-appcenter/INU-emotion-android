@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.btn_betting_emotion -> Intent(view.context, BettingTemperatureActivity::class.java)
                 R.id.btn_emotion_graph -> {
                     Toast.makeText(applicationContext, "준비중입니다.", Toast.LENGTH_LONG).show()
-                    Intent(view.context, SelectTemperatureActivity::class.java)
+                    null
                 }
                 R.id.image_profile -> Intent(view.context, LoginActivity::class.java)
 
