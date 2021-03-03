@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InuEmotion"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SelectTemperatureActivity"></activity>
+        <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".RankingActivity" />
         <activity android:name=".GraphActivity" />
         <activity android:name=".SelectElementActivity" />
         <activity android:name=".ResultActivity" />

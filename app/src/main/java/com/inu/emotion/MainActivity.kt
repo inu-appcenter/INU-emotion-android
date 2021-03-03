@@ -1,6 +1,7 @@
 package com.inu.emotion
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,6 +14,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
+        // 스플래시 화면
+        startActivity(Intent(this, SplashScreen::class.java))
 
         val clickListener = BtnClickListener()
         findViewById<Button>(R.id.btn_select_emotion).setOnClickListener(clickListener)
