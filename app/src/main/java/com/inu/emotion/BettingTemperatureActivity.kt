@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.SeekBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import retrofit2.Call
 import retrofit2.Response
 import javax.security.auth.callback.Callback
@@ -18,6 +15,9 @@ class BettingTemperatureActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_betting_temperature)
+
+        // undo
+        findViewById<ImageView>(R.id.undo).setOnClickListener{finish()}
 
         // 온도계 설정
         temperatureBar = findViewById(R.id.thermometer)

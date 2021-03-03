@@ -17,6 +17,16 @@
         android:contentDescription="@string/app_center_logo"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageView
+        android:id="@+id/undo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_undo"/>
+
     <TextView
         android:id="@+id/title"
         android:layout_marginTop="100dp"

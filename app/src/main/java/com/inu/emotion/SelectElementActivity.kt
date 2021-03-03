@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Response
@@ -17,6 +18,9 @@ class SelectElementActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_element)
+
+        // undo
+        findViewById<ImageView>(R.id.undo).setOnClickListener{finish()}
 
         // 리사이클러뷰 설정
         val recyclerView = findViewById<RecyclerView>(R.id.elements)
