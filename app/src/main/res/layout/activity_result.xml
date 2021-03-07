@@ -237,7 +237,7 @@
         android:layout_width="@dimen/bar_size"
         android:layout_height="@dimen/bar_stroke_size"
         android:max="100"
-        android:progress="50"
+        android:progress="99"
         android:rotation="270"
         android:thumb="@null"
         android:progressDrawable="@drawable/seekbar"

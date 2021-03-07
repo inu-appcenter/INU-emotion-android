@@ -1,5 +1,6 @@
 package com.inu.emotion
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.res.Resources
@@ -55,6 +56,8 @@ class SelectElementActivity : AppCompatActivity() {
             })
 
             // 메인화면으로 이동
+            val resultIntent = Intent(this, SelectElementActivity::class.java)
+            setResult(Activity.RESULT_OK, resultIntent)
             finish()
         }
     }
