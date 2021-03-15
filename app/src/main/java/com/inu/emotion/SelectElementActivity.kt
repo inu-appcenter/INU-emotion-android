@@ -74,17 +74,17 @@ class SelectElementActivity : AppCompatActivity() {
     private fun insertDataSet() : ArrayList<ElementAdapter.ElementVO> {
         return arrayListOf<ElementAdapter.ElementVO>(
                 ElementAdapter.ElementVO("음식",
-                        arrayListOf("집밥", "패스트푸드", "건강식", "외식", "배달", "디저트")),
+                        resources.getStringArray(R.array.element_foods).toCollection(ArrayList<String>())),
                 ElementAdapter.ElementVO("인간관계",
-                        arrayListOf("가족", "친구", "연인", "동료", "동기", "선후배")),
+                        resources.getStringArray(R.array.elements_relation).toCollection(ArrayList<String>())),
                 ElementAdapter.ElementVO("학업",
-                        arrayListOf("시험", "과제/레포트", "성적", "공모전/대외활동", "자격증", "또뭐가있을까요")),
+                        resources.getStringArray(R.array.elements_study).toCollection(ArrayList<String>())),
                 ElementAdapter.ElementVO("취미",
-                        arrayListOf("영화/드라마", "게임", "독서", "여행", "요리", "휴식")),
+                        resources.getStringArray(R.array.elements_hobby).toCollection(ArrayList<String>())),
                 ElementAdapter.ElementVO("건강",
-                        arrayListOf("운동", "수면", "질병", "스트레스", "체중", "또뭐가있을까요")),
+                        resources.getStringArray(R.array.elements_health).toCollection(ArrayList<String>())),
                 ElementAdapter.ElementVO("기타",
-                        arrayListOf("업무", "날씨", "교통", "행운", "불운", "그냥")),
+                        resources.getStringArray(R.array.elements_etc).toCollection(ArrayList<String>())),
         )
     }
 
