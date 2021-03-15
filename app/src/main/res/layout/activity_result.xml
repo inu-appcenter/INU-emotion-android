@@ -93,7 +93,7 @@
         android:layout_marginTop="@dimen/interval_emotion"
         android:layout_width="20dp"
         android:layout_height="200dp"
-        android:src="@drawable/img_divider"
+        android:src="@drawable/img_divider_small"
         android:contentDescription="@string/divider"
         app:layout_constraintTop_toTopOf="@id/left_division_line"
         app:layout_constraintEnd_toEndOf="@id/layout_left"/>
@@ -112,7 +112,7 @@
         android:layout_marginTop="@dimen/interval_emotion"
         android:layout_width="20dp"
         android:layout_height="200dp"
-        android:src="@drawable/img_divider"
+        android:src="@drawable/img_divider_small"
         android:contentDescription="@string/divider"
         app:layout_constraintTop_toTopOf="@id/right_division_line"
         app:layout_constraintStart_toStartOf="@id/layout_right"/>
