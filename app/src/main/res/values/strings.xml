@@ -42,4 +42,9 @@
     <!-- item_element.xml -->
     <string name="ic_category">아이콘</string>
     <string name="space">                                                  </string>
+
+    <!-- activity_login.xml -->
+    <string name="id_hint">학번</string>
+    <string name="password_hint">●●●●●●</string>
+
 </resources>

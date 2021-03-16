@@ -32,6 +32,8 @@ class ResultActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ResultEntity?>, response: Response<ResultEntity?>) {
                 resultBody = response.body()
                 Log.i("ResultActivity : ", "성공")
+                Log.i("ResultActivity res message : ", response.message())
+                Log.i("ResultActivity res code : ", response.code().toString())
                 temperatureBar.progress = resultBody!!.todayMoodAvg
                 thermometer.text = temperatureBar.progress.toString() + "ºC"
                 // TODO : 요소 순위 출력
