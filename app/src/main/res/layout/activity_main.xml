@@ -120,6 +120,12 @@
             app:layout_constraintStart_toEndOf="@+id/btn_betting_emotion"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_recyclerview"
+            app:layout_constraintTop_toTopOf="@id/text_major"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

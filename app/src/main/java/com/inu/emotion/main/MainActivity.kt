@@ -7,8 +7,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.*
 import com.inu.emotion.betting.BettingTemperatureActivity
+import com.inu.emotion.emotion.SelectEmotionActivity
 import com.inu.emotion.login.LoginActivity
 import com.inu.emotion.splash.SplashScreen
 import com.inu.emotion.today.ResultActivity
@@ -27,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, SplashScreen::class.java))
 
         initMainActivity()
+
+
+        val recyclerView = findViewById<RecyclerView>(R.id.main_recyclerview)
+        recyclerView.adapter = MenuAdapter(arrayListOf(MenuAdapter.MenuVO("1", 1)))
     }
 
     private fun initMainActivity() {
