@@ -1,4 +1,4 @@
-package com.inu.emotion
+package com.inu.emotion.network
 
 import retrofit2.Call
 import retrofit2.http.*

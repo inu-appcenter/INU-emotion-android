@@ -3,7 +3,6 @@ package com.inu.emotion
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
 import android.graphics.Rect
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +11,8 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.inu.emotion.elements.ElementAdapter
+import com.inu.emotion.network.RetrofitFactory
 import retrofit2.Call
 import retrofit2.Response
 

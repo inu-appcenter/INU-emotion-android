@@ -1,9 +1,10 @@
-package com.inu.emotion
+package com.inu.emotion.customView
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import androidx.core.content.ContextCompat
+import com.inu.emotion.R
 
 class TemperatureBar constructor(
         context: Context,

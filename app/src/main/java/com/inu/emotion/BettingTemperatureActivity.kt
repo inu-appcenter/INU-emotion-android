@@ -5,9 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.inu.emotion.customView.TemperatureBar
+import com.inu.emotion.network.RetrofitFactory
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class BettingTemperatureActivity : AppCompatActivity() {
     var temperatureBar : TemperatureBar? = null

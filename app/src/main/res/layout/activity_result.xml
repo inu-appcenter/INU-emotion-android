@@ -231,7 +231,7 @@
         app:layout_constraintStart_toEndOf="@id/background_thermometer" />
 
     <!-- 온도계 -->
-    <com.inu.emotion.TemperatureBar
+    <com.inu.emotion.customView.TemperatureBar
         android:id="@+id/thermometer"
         android:layout_marginTop="197dp"
         android:layout_width="@dimen/bar_size"

@@ -1,7 +1,8 @@
-package com.inu.emotion
+package com.inu.emotion.graph
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.inu.emotion.R
 
 class GraphActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

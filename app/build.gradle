@@ -46,4 +46,8 @@ dependencies {
     // retrofit2 의존성
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    // junit 의존성
+    androidTestImplementation("androidx.test:runner:1.2.0")
+    androidTestImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
 }

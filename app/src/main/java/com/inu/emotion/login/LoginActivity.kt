@@ -1,4 +1,4 @@
-package com.inu.emotion
+package com.inu.emotion.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
+import com.inu.emotion.R
+import com.inu.emotion.network.LoginEntity
+import com.inu.emotion.network.RetrofitFactory
 import retrofit2.Call
 import retrofit2.Response
 

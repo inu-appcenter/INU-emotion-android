@@ -12,15 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InuEmotion"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SplashScreen"></activity>
-        <activity android:name=".RankingActivity" />
-        <activity android:name=".GraphActivity" />
-        <activity android:name=".SelectElementActivity" />
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".BettingTemperatureActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SelectEmotionActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".splash.SplashScreen"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".today.RankingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".graph.GraphActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SelectElementActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ResultActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".BettingTemperatureActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".login.LoginActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SelectEmotionActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".main.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
