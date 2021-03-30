@@ -1,4 +1,4 @@
-package com.inu.emotion
+package com.inu.emotion.elements
 
 import android.app.Activity
 import android.content.Context
@@ -11,7 +11,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.inu.emotion.elements.ElementAdapter
+import com.inu.emotion.R
 import com.inu.emotion.network.RetrofitFactory
 import retrofit2.Call
 import retrofit2.Response

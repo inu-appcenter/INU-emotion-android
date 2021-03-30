@@ -1,4 +1,4 @@
-package com.inu.emotion.today
+package com.inu.emotion.ranking
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

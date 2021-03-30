@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.inu.emotion.customView.TemperatureBar
+import com.inu.emotion.elements.SelectElementActivity
 
 class SelectEmotionActivity : AppCompatActivity() {
     var temperatureBar : TemperatureBar? = null

@@ -1,4 +1,4 @@
-package com.inu.emotion
+package com.inu.emotion.today
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.inu.emotion.R
 import com.inu.emotion.customView.TemperatureBar
 import com.inu.emotion.network.ResultEntity
 import com.inu.emotion.network.RetrofitFactory

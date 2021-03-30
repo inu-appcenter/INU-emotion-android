@@ -1,10 +1,11 @@
-package com.inu.emotion
+package com.inu.emotion.betting
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.inu.emotion.R
 import com.inu.emotion.customView.TemperatureBar
 import com.inu.emotion.network.RetrofitFactory
 import retrofit2.Call

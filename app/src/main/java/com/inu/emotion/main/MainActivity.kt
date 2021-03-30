@@ -8,8 +8,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import com.inu.emotion.*
+import com.inu.emotion.betting.BettingTemperatureActivity
 import com.inu.emotion.login.LoginActivity
 import com.inu.emotion.splash.SplashScreen
+import com.inu.emotion.today.ResultActivity
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
