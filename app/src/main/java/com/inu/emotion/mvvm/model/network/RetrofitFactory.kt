@@ -1,4 +1,4 @@
-package com.inu.emotion.network
+package com.inu.emotion.mvvm.model.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -1,4 +1,4 @@
-package com.inu.emotion.network
+package com.inu.emotion.mvvm.model.network
 
 class ResultEntity {
     var todayMoodAvg : Int = 50

@@ -1,4 +1,4 @@
-package com.inu.emotion.emotion
+package com.inu.emotion.mvvm.feature.emotion
 
 import android.app.Activity
 import android.content.Intent
@@ -8,8 +8,8 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.inu.emotion.R
-import com.inu.emotion.customView.TemperatureBar
-import com.inu.emotion.elements.SelectElementActivity
+import com.inu.emotion.mvvm.feature.common.TemperatureBar
+import com.inu.emotion.mvvm.feature.elements.SelectElementActivity
 
 class SelectEmotionActivity : AppCompatActivity() {
     var temperatureBar : TemperatureBar? = null

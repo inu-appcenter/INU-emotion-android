@@ -1,4 +1,4 @@
-package com.inu.emotion.customView
+package com.inu.emotion.mvvm.feature.common
 
 import android.content.Context
 import android.graphics.*

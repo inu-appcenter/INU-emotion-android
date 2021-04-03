@@ -1,4 +1,4 @@
-package com.inu.emotion.today
+package com.inu.emotion.mvvm.feature.today
 
 import android.os.Bundle
 import android.util.Log
@@ -8,9 +8,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.inu.emotion.R
-import com.inu.emotion.customView.TemperatureBar
-import com.inu.emotion.network.ResultEntity
-import com.inu.emotion.network.RetrofitFactory
+import com.inu.emotion.mvvm.feature.common.TemperatureBar
+import com.inu.emotion.mvvm.model.network.ResultEntity
+import com.inu.emotion.mvvm.model.network.RetrofitFactory
 import retrofit2.Call
 import retrofit2.Response
 

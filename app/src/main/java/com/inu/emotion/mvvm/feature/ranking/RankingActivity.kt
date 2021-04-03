@@ -1,12 +1,12 @@
-package com.inu.emotion.graph
+package com.inu.emotion.mvvm.feature.ranking
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.inu.emotion.R
 
-class GraphActivity : AppCompatActivity() {
+class RankingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_graph)
+        setContentView(R.layout.activity_ranking)
     }
 }

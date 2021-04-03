@@ -1,4 +1,4 @@
-package com.inu.emotion.elements
+package com.inu.emotion.mvvm.feature.elements
 
 import android.graphics.Typeface
 import android.view.LayoutInflater

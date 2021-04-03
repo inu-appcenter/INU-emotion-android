@@ -1,4 +1,4 @@
-package com.inu.emotion.main
+package com.inu.emotion.mvvm.feature.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,11 +9,11 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.*
-import com.inu.emotion.betting.BettingTemperatureActivity
-import com.inu.emotion.emotion.SelectEmotionActivity
-import com.inu.emotion.login.LoginActivity
-import com.inu.emotion.splash.SplashScreen
-import com.inu.emotion.today.ResultActivity
+import com.inu.emotion.mvvm.feature.betting.BettingTemperatureActivity
+import com.inu.emotion.mvvm.feature.emotion.SelectEmotionActivity
+import com.inu.emotion.mvvm.feature.login.LoginActivity
+import com.inu.emotion.mvvm.feature.splash.SplashActivity
+import com.inu.emotion.mvvm.feature.today.ResultActivity
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
          * 스플래시 화면
          * 메인 -> 스플래시 화면(강제) -> 메인
          */
-        startActivity(Intent(this, SplashScreen::class.java))
+        startActivity(Intent(this, SplashActivity::class.java))
 
         initMainActivity()
 
 
         val recyclerView = findViewById<RecyclerView>(R.id.main_recyclerview)
-        recyclerView.adapter = MenuAdapter(arrayListOf(MenuAdapter.MenuVO("1", 1)))
+        recyclerView.adapter = MenuAdapter(arrayListOf(MenuAdapter.MenuVO("123123123123123", 1)))
     }
 
     private fun initMainActivity() {

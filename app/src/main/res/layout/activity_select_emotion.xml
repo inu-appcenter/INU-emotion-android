@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".emotion.SelectEmotionActivity">
+    tools:context=".mvvm.feature.emotion.SelectEmotionActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -231,7 +231,7 @@
         app:layout_constraintStart_toEndOf="@id/background_thermometer" />
 
     <!-- 온도계 -->
-    <com.inu.emotion.customView.TemperatureBar
+    <com.inu.emotion.mvvm.feature.common.TemperatureBar
         android:id="@+id/thermometer"
         android:layout_marginTop="197dp"
         android:layout_width="@dimen/bar_size"
