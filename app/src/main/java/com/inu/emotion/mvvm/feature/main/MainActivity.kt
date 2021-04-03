@@ -22,14 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /**
-         * 스플래시 화면
-         * 메인 -> 스플래시 화면(강제) -> 메인
-         */
-        startActivity(Intent(this, SplashActivity::class.java))
-
         initMainActivity()
-
 
         val recyclerView = findViewById<RecyclerView>(R.id.main_recyclerview)
         recyclerView.adapter = MenuAdapter(arrayListOf(MenuAdapter.MenuVO("123123123123123", 1)))

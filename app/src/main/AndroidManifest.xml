@@ -13,7 +13,13 @@
         android:theme="@style/Theme.InuEmotion"
         android:usesCleartextTraffic="true">
         <activity android:name="com.inu.emotion.mvvm.feature.splash.SplashActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.inu.emotion.mvvm.feature.ranking.RankingActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.inu.emotion.mvvm.feature.graph.GraphActivity"
@@ -30,11 +36,6 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".mvvm.feature.main.MainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
