@@ -4,6 +4,7 @@ import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +12,7 @@ import com.inu.emotion.R
 
 class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
         RecyclerView.Adapter<ElementAdapter.ViewHolder>() {
+    val imgIds = arrayListOf(R.drawable.img_element_food, R.drawable.img_element_relation, R.drawable.img_element_study, R.drawable.img_element_hobby, R.drawable.img_element_health, R.drawable.img_element_etc)
     var elements : ArrayList<String?> = ArrayList(3)
     val cntOfElement : Int
         get() = elements.size
@@ -30,6 +32,7 @@ class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
         viewHolder.element4.text = dataSet[position].elements[3]
         viewHolder.element5.text = dataSet[position].elements[4]
         viewHolder.element6.text = dataSet[position].elements[5]
+        viewHolder.logo.setImageResource(imgIds[position])
     }
 
     override fun getItemCount() = dataSet.size
@@ -42,12 +45,13 @@ class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
         val element4: TextView = view.findViewById(R.id.element4)
         val element5: TextView = view.findViewById(R.id.element5)
         val element6: TextView = view.findViewById(R.id.element6)
+        val logo: ImageView = view.findViewById(R.id.img_element)
 
         init {
             setOnClickListener()
         }
 
-        fun setOnClickListener() {
+        private fun setOnClickListener() {
             val onClickListener = OnClickListener()
             element1.setOnClickListener(onClickListener)
             element2.setOnClickListener(onClickListener)
@@ -57,7 +61,7 @@ class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
             element6.setOnClickListener(onClickListener)
         }
 
-        inner class OnClickListener() : View.OnClickListener {
+        inner class OnClickListener : View.OnClickListener {
             override fun onClick(view: View?) {
                 if((view as TextView).typeface == Typeface.DEFAULT) {
                     // 이미 3개를 선택했을 경우
