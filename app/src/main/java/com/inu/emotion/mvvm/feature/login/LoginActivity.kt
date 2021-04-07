@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
             // id / pw 얻기
             val inputId = findViewById<EditText>(R.id.input_id).text.toString()
             val inputPw = findViewById<EditText>(R.id.input_password).text.toString()
-            Log.i("123123 : ", inputId + ", " + inputPw)
+            Log.i("로그인 요청 : ", inputId + ", " + inputPw)
             // 로그인 요청
             val retrofitFactory = RetrofitFactory().create()
             val call = retrofitFactory.postLogin(inputId, inputPw)

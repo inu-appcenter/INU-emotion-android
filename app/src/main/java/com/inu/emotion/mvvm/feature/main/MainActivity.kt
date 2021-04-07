@@ -1,5 +1,6 @@
 package com.inu.emotion.mvvm.feature.main
 
+import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.*
 import com.inu.emotion.databinding.ActivityMainBinding
+import com.inu.emotion.mvvm.feature.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -35,5 +37,11 @@ class MainActivity : AppCompatActivity() {
         (recyclerView.layoutManager as GridLayoutManager).apply { spanCount = 2 }
         recyclerView.addItemDecoration(MenuItemDecoration(2, 48, false))
         recyclerView.adapter = MenuAdapter(list)
+
+        // login button (사실 임시로 연결한 거)
+        findViewById<ImageView>(R.id.image_profile).setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -28,7 +28,6 @@
 
     <!-- activity_result.xml -->
     <string name="title_result">INU 지금 기분 온도는?</string>
-    <string name="err_server">99ºC</string>
     <string name="btn_ranking">랭킹 보기</string>
 
     <!-- activity_betting.xml -->

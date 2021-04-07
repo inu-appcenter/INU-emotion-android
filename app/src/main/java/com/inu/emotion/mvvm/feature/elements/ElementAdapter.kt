@@ -12,7 +12,12 @@ import com.inu.emotion.R
 
 class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
         RecyclerView.Adapter<ElementAdapter.ViewHolder>() {
-    val imgIds = arrayListOf(R.drawable.img_element_food, R.drawable.img_element_relation, R.drawable.img_element_study, R.drawable.img_element_hobby, R.drawable.img_element_health, R.drawable.img_element_etc)
+    val imgIds = arrayListOf(R.drawable.img_element_food,
+        R.drawable.img_element_relation,
+        R.drawable.img_element_study,
+        R.drawable.img_element_hobby,
+        R.drawable.img_element_health,
+        R.drawable.img_element_etc)
     var elements : ArrayList<String?> = ArrayList(3)
     val cntOfElement : Int
         get() = elements.size
