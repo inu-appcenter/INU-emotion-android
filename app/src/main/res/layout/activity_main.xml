@@ -45,6 +45,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="#000000"
+                tools:text="홍길동"
                 android:text="@{main.name}" />
 
             <TextView
@@ -57,6 +58,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textSize="16sp"
                 android:textColor="#707070"
+                tools:text="정보기술대학 컴퓨터공학부"
                 android:text="@{main.major}"/>
 
             <!-- 메뉴 -->
@@ -74,7 +76,8 @@
                 android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/text_major"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btn_result"/>
+                app:layout_constraintEnd_toStartOf="@id/btn_result"
+                android:visibility="gone"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_result"
@@ -88,7 +91,8 @@
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="@+id/btn_select_emotion"
                 app:layout_constraintStart_toEndOf="@+id/btn_select_emotion"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_betting_emotion"
@@ -103,7 +107,8 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@id/btn_emotion_graph"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_select_emotion" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_select_emotion"
+                android:visibility="gone"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_emotion_graph"
@@ -117,17 +122,21 @@
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="@+id/btn_betting_emotion"
                 app:layout_constraintStart_toEndOf="@+id/btn_betting_emotion"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"/>
 
             <!-- TODO : 리사이클러뷰로 버튼 변경 -->
-            <!--androidx.recyclerview.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/main_recyclerview"
+                android:layout_marginTop="52dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_major"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elevation="10dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:orientation="vertical"/-->
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                android:orientation="vertical" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

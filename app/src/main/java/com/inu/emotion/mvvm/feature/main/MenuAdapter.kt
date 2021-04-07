@@ -19,9 +19,8 @@ class MenuAdapter(private val menuData: ArrayList<MenuVO>)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        // val item = menuData[position]
-        // TODO : 수정해야할 곳
-        holder.setImage(R.drawable.ic_chart)
+        val item = menuData[position]
+        holder.setImage(item.img)
         holder.tvMenu?.text = menuData[position].menu
     }
 
