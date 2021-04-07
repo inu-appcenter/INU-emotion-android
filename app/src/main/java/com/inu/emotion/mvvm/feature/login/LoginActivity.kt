@@ -7,45 +7,31 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.activity.viewModels
+import androidx.databinding.DataBindingUtil
 import com.inu.emotion.R
+import com.inu.emotion.databinding.ActivityLoginBinding
 import com.inu.emotion.mvvm.model.network.LoginEntity
 import com.inu.emotion.mvvm.model.network.RetrofitFactory
 import retrofit2.Call
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
+    private val viewModel: LoginViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
         // 버튼 클릭
         findViewById<Button>(R.id.btn_login).setOnClickListener {
             // id / pw 얻기
             val inputId = findViewById<EditText>(R.id.input_id).text.toString()
             val inputPw = findViewById<EditText>(R.id.input_password).text.toString()
-            Log.i("로그인 요청 : ", inputId + ", " + inputPw)
-            // 로그인 요청
-            val retrofitFactory = RetrofitFactory().create()
-            val call = retrofitFactory.postLogin(inputId, inputPw)
-            var resultToken : LoginEntity? = null
-            call.enqueue(object : retrofit2.Callback<LoginEntity> {
-                override fun onResponse(call: Call<LoginEntity>?, response: Response<LoginEntity>?) {
-                    if (response!!.isSuccessful) {
-                        Log.i("LoginActivity : ", "login 성공")
-                        resultToken = response.body()
-                        Log.i("loginToken : ", resultToken.toString())
-                    } else {
-                        Log.e("연결 실패 : ", "error code : " + response.code())
-                        Log.e("LoginActivity res message: ", response.message())
-                        findViewById<TextView>(R.id.text_login).visibility = View.VISIBLE
-                    }
-                }
 
-                override fun onFailure(call: Call<LoginEntity>?, t: Throwable?) {
-                    t?.printStackTrace()
-                    Log.e("LoginActivity : ", "연결 실패 (onFailure)")
-                }
-            })
+            // 로그인 요청
+            viewModel.requestLogin(binding.root, inputId, inputPw)
         }
     }
 }
