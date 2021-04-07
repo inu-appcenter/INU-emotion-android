@@ -12,8 +12,8 @@ import com.inu.emotion.R
 class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
         RecyclerView.Adapter<ElementAdapter.ViewHolder>() {
     var elements : ArrayList<String?> = ArrayList(3)
-    var cntOfElement : Int = 0
-    get() = elements.size
+    val cntOfElement : Int
+        get() = elements.size
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(viewGroup.context)
@@ -35,22 +35,15 @@ class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
     override fun getItemCount() = dataSet.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val category: TextView
-        val element1: TextView
-        val element2: TextView
-        val element3: TextView
-        val element4: TextView
-        val element5: TextView
-        val element6: TextView
+        val category: TextView = view.findViewById(R.id.category)
+        val element1: TextView = view.findViewById(R.id.element1)
+        val element2: TextView = view.findViewById(R.id.element2)
+        val element3: TextView = view.findViewById(R.id.element3)
+        val element4: TextView = view.findViewById(R.id.element4)
+        val element5: TextView = view.findViewById(R.id.element5)
+        val element6: TextView = view.findViewById(R.id.element6)
 
         init {
-            category = view.findViewById(R.id.category)
-            element1 = view.findViewById(R.id.element1)
-            element2 = view.findViewById(R.id.element2)
-            element3 = view.findViewById(R.id.element3)
-            element4 = view.findViewById(R.id.element4)
-            element5 = view.findViewById(R.id.element5)
-            element6 = view.findViewById(R.id.element6)
             setOnClickListener()
         }
 
@@ -66,7 +59,7 @@ class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
 
         inner class OnClickListener() : View.OnClickListener {
             override fun onClick(view: View?) {
-                if((view as TextView)?.typeface == Typeface.DEFAULT) {
+                if((view as TextView).typeface == Typeface.DEFAULT) {
                     // 이미 3개를 선택했을 경우
                     if(cntOfElement == 3) {
                         Toast.makeText(view?.context, "최대 3개까지 선택 가능합니다.", Toast.LENGTH_SHORT).show()

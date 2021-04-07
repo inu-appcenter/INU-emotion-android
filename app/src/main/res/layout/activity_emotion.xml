@@ -7,7 +7,6 @@
             type="com.inu.emotion.mvvm.feature.emotion.EmotionViewModel" />
     </data>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -56,7 +55,7 @@
             android:contentDescription="@string/thermometer_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/title"/>
 
         <!-- 온도 텍스트 뷰 -->
         <TextView
