@@ -3,6 +3,8 @@ package com.inu.emotion.mvvm.feature.today
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.inu.emotion.R
 import com.inu.emotion.mvvm.feature.common.TemperatureBar
@@ -12,13 +14,15 @@ import retrofit2.Call
 import retrofit2.Response
 
 class ResultViewModel : ViewModel() {
-    var temperature: String = 99.toString() + "ºC"
+    private val _temperatureProgress: MutableLiveData<Int> = MutableLiveData(90)
+    val temperatureProgress: LiveData<Int> = _temperatureProgress
+    private val _temperature: MutableLiveData<String> = MutableLiveData(90.toString() + "ºC")
+    val temperature: LiveData<String> = _temperature
 
     fun request(view: View) {
         val retrofitFactory = RetrofitFactory().create()
         val call = retrofitFactory.getResult()
         var resultBody : ResultEntity?
-        val thermometer = view.findViewById<TemperatureBar>(R.id.thermometer)
 
         call.enqueue(object : retrofit2.Callback<ResultEntity?> {
             override fun onResponse(call: Call<ResultEntity?>, response: Response<ResultEntity?>) {
@@ -26,8 +30,8 @@ class ResultViewModel : ViewModel() {
                 Log.i("오늘의 온도 요청 : ", "성공")
                 Log.i("오늘의 온도 요청 res message : ", response.message())
                 Log.i("오늘의 온도 요청 res code : ", response.code().toString())
-                thermometer.progress = resultBody!!.todayMoodAvg
-                temperature = thermometer.progress.toString() + "ºC"
+                _temperatureProgress.value = resultBody!!.todayMoodAvg
+                _temperature.value = _temperatureProgress.value.toString() + "ºC"
                 Log.i("오늘의 온도 요청 : ", "server result - " + resultBody!!.elementRanking)
             }
 
