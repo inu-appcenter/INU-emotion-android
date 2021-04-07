@@ -7,8 +7,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.*
+import com.inu.emotion.databinding.ActivityMainBinding
 import com.inu.emotion.mvvm.feature.betting.BettingTemperatureActivity
 import com.inu.emotion.mvvm.feature.emotion.SelectEmotionActivity
 import com.inu.emotion.mvvm.feature.login.LoginActivity
@@ -17,15 +20,20 @@ import com.inu.emotion.mvvm.feature.today.ResultActivity
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.lifecycleOwner = this
+        binding.main = viewModel
 
         initMainActivity()
 
-        val recyclerView = findViewById<RecyclerView>(R.id.main_recyclerview)
-        recyclerView.adapter = MenuAdapter(arrayListOf(MenuAdapter.MenuVO("123123123123123", 1)))
+        // TODO : 버튼 -> 리사이클러뷰
+//        val recyclerView = findViewById<RecyclerView>(R.id.main_recyclerview)
+//        recyclerView.adapter = MenuAdapter(arrayListOf(MenuAdapter.MenuVO("123123123123123", 1)))
     }
 
     private fun initMainActivity() {
