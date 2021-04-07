@@ -1,5 +1,6 @@
 package com.inu.emotion.mvvm.feature.today
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.inu.emotion.R
 import com.inu.emotion.mvvm.feature.common.TemperatureBar
+import com.inu.emotion.mvvm.feature.ranking.RankingActivity
 import com.inu.emotion.mvvm.model.network.ResultEntity
 import com.inu.emotion.mvvm.model.network.RetrofitFactory
 import retrofit2.Call
@@ -52,7 +54,8 @@ class ResultActivity : AppCompatActivity() {
 
         // 랭킹 확인 버튼 클릭
         findViewById<Button>(R.id.btn_score_board).setOnClickListener {
-            Toast.makeText(applicationContext, "서비스 준비중입니다.", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, RankingActivity::class.java)
+            startActivity(intent)
         }
     }
 }

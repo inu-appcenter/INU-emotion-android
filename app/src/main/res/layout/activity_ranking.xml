@@ -6,4 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".mvvm.feature.ranking.RankingActivity">
 
+    <ImageView
+        android:id="@+id/undo"
+        app:layout_constraintTop_toTopOf="@id/title_ranking"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20.45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_undo"/>
+
+    <TextView
+        android:id="@+id/title_ranking"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="42dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1월 랭킹"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ranking_recyclerview"
+        app:layout_constraintTop_toBottomOf="@id/title_ranking"
+        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
