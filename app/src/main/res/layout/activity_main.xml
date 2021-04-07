@@ -14,21 +14,12 @@
     
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#F6F6F6">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_activity_main">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/background_activity_main"
-                app:layout_constraintTop_toTopOf="parent"
-                android:elevation="3dp"
-                android:outlineProvider="bounds"
-                android:contentDescription="@string/img_profile"/>
+            android:layout_height="wrap_content">
 
             <!-- 프로필 -->
             <ImageView
@@ -41,7 +32,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:elevation="3dp"
                 android:src="@drawable/img_temp_profile"
-                android:contentDescription="@string/main_background"/>
+                android:contentDescription="@string/img_profile"/>
 
             <TextView
                 android:id="@+id/text_name"

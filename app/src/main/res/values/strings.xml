@@ -2,7 +2,6 @@
     <string name="app_name">Temp U</string>
 
     <!-- activity_main.xml -->
-    <string name="main_background">배경</string>
     <string name="img_profile">프로필 사진</string>
     <string name="btn_select_emotion">감정선택</string>
     <string name="btn_current">현황</string>
