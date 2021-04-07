@@ -2,27 +2,33 @@ package com.inu.emotion.mvvm.feature.emotion
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.widget.*
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.inu.emotion.R
+import com.inu.emotion.databinding.ActivityEmotionBinding
 import com.inu.emotion.mvvm.feature.common.TemperatureBar
 import com.inu.emotion.mvvm.feature.elements.SelectElementActivity
 
 class SelectEmotionActivity : AppCompatActivity() {
-    var temperatureBar : TemperatureBar? = null
+    var temperatureBar: TemperatureBar? = null
+    private lateinit var binding: ActivityEmotionBinding
+    private val viewModel: EmotionViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_select_emotion)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_emotion)
+        binding.lifecycleOwner = this
+        binding.emotion = viewModel
 
         // undo
-        findViewById<ImageView>(R.id.undo).setOnClickListener{finish()}
+        findViewById<ImageView>(R.id.undo).setOnClickListener { finish() }
 
+        // 온도계 활성화
         temperatureBar = findViewById(R.id.thermometer)
-        temperatureBar?.setOnSeekBarChangeListener(OnTemperatureBarChangeListener())
+        temperatureBar?.setOnSeekBarChangeListener(viewModel.OnTemperatureBarChangeListener(binding.root))
 
         // 확인 버튼 클릭
         findViewById<Button>(R.id.btn_select_temperature).setOnClickListener {
@@ -36,48 +42,5 @@ class SelectEmotionActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(requestCode == 10 && resultCode == Activity.RESULT_OK) finish()
-    }
-
-    // 온도계 터치
-    inner class OnTemperatureBarChangeListener : SeekBar.OnSeekBarChangeListener {
-        var preId = R.id.right_txt3
-
-        override fun onStartTrackingTouch(p0: SeekBar?) {
-
-        }
-
-        override fun onStopTrackingTouch(view: SeekBar?) {
-
-        }
-
-        override fun onProgressChanged(view: SeekBar?, p1: Int, p2: Boolean) {
-            var progress : Int
-
-            if(view == null) Log.d("SelectEmotionActivity : ", "error : view is null")
-            else {
-                progress = view.progress
-                var selectedId = when {
-                    (progress <= 10) -> R.id.right_txt5
-                    (progress <= 20) -> R.id.left_txt5
-                    (progress <= 30) -> R.id.right_txt4
-                    (progress <= 40) -> R.id.left_txt4
-                    (progress <= 50) -> R.id.right_txt3
-                    (progress <= 60) -> R.id.left_txt3
-                    (progress <= 70) -> R.id.right_txt2
-                    (progress <= 80) -> R.id.left_txt2
-                    (progress <= 90) -> R.id.right_txt1
-                    (progress <= 100) -> R.id.left_txt1
-                    else -> null
-                }
-
-                findViewById<TextView>(preId).setTextSize(17F)
-                findViewById<TextView>(preId).setTypeface(null, Typeface.NORMAL)
-                findViewById<TextView>(selectedId!!).setTextSize(24F)
-                findViewById<TextView>(selectedId!!).setTypeface(null, Typeface.BOLD)
-                preId = selectedId
-
-                findViewById<TextView>(R.id.tv_temperature).setText(progress.toString() + "ºC")
-            }
-        }
     }
 }

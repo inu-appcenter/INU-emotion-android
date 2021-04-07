@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    // 배경
     <item android:id="@android:id/background">
         <layer-list android:width="@dimen/bar_size" android:height="@dimen/bar_stroke_size">
             <item android:width="@dimen/bar_size" android:height="@dimen/bar_stroke_size">

@@ -19,7 +19,7 @@ import retrofit2.Response
 class SelectElementActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_select_element)
+        setContentView(R.layout.activity_element)
 
         // undo
         findViewById<ImageView>(R.id.undo).setOnClickListener{finish()}
