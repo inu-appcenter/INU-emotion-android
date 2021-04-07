@@ -23,8 +23,6 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.main = viewModel
 
-        initMainActivity()
-
         val list = arrayListOf(
             MenuAdapter.MenuVO("감정선택", R.drawable.img_main_betting),
             MenuAdapter.MenuVO("현황", R.drawable.img_main_chart),
@@ -37,14 +35,5 @@ class MainActivity : AppCompatActivity() {
         (recyclerView.layoutManager as GridLayoutManager).apply { spanCount = 2 }
         recyclerView.addItemDecoration(MenuItemDecoration(2, 48, false))
         recyclerView.adapter = MenuAdapter(list)
-    }
-
-    private fun initMainActivity() {
-        val clickListener = viewModel.BtnClickListener(this)
-        findViewById<Button>(R.id.btn_select_emotion).setOnClickListener(clickListener)
-        findViewById<Button>(R.id.btn_result).setOnClickListener(clickListener)
-        findViewById<Button>(R.id.btn_betting_emotion).setOnClickListener(clickListener)
-        findViewById<Button>(R.id.btn_emotion_graph).setOnClickListener(clickListener)
-        findViewById<ImageView>(R.id.image_profile).setOnClickListener(clickListener)
     }
 }
