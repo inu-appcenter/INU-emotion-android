@@ -11,6 +11,7 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.inu.emotion.R
 import com.inu.emotion.databinding.ActivityLoginBinding
+import com.inu.emotion.mvvm.global.TokenStorage
 import com.inu.emotion.mvvm.model.network.LoginEntity
 import com.inu.emotion.mvvm.model.network.RetrofitFactory
 import retrofit2.Call
@@ -32,6 +33,7 @@ class LoginActivity : AppCompatActivity() {
 
             // 로그인 요청
             viewModel.requestLogin(binding.root, inputId, inputPw)
+            if(TokenStorage.token != null) finish() // TODO : 스레드 시간 차 문제 때문에 종료가 안 되는 버그가 있음.
         }
     }
 }

@@ -35,7 +35,7 @@ class SelectElementActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_ok).setOnClickListener {
             // 서버로 데이터 전송
             val retrofitFactory = RetrofitFactory().create()
-            val temperature = intent.getIntExtra("temp", 50)
+            val temperature = intent.getIntExtra("temperature", 50)
             val elements = getElements((recyclerView.adapter as ElementAdapter).elements)
             val call = retrofitFactory.postMood(
                     token = "Bearer " + TokenStorage.token,

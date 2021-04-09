@@ -1,5 +1,6 @@
 package com.inu.emotion.mvvm.feature.elements
 
+import android.graphics.Color
 import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.R
 
@@ -77,10 +79,12 @@ class ElementAdapter(private val dataSet: ArrayList<ElementVO>) :
 
                     elements.add(view.text.toString())
                     view.typeface = Typeface.DEFAULT_BOLD
+                    view.background = ContextCompat.getDrawable(view.context, R.drawable.item_selected_element)
                 }
                 else {
                     elements.remove(view.text.toString())
                     view.typeface = Typeface.DEFAULT
+                    view.background = ContextCompat.getDrawable(view.context, R.drawable.item_unselected_element)
                 }
             }
         }
