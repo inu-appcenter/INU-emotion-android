@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding.main = viewModel
 
         val list = arrayListOf(
-            MenuAdapter.MenuVO("감정선택", R.drawable.img_main_betting),
+            MenuAdapter.MenuVO("감정선택", R.drawable.img_main_thermometer),
             MenuAdapter.MenuVO("현황", R.drawable.img_main_chart),
             MenuAdapter.MenuVO("베팅", R.drawable.img_main_betting),
             MenuAdapter.MenuVO("감정기록", R.drawable.img_main_record)

@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.R
+import com.inu.emotion.mvvm.global.TokenStorage
 import com.inu.emotion.mvvm.model.network.RetrofitFactory
 import retrofit2.Call
 import retrofit2.Response
@@ -36,17 +37,22 @@ class SelectElementActivity : AppCompatActivity() {
             val retrofitFactory = RetrofitFactory().create()
             val temperature = intent.getIntExtra("temp", 50)
             val elements = getElements((recyclerView.adapter as ElementAdapter).elements)
-            val call = retrofitFactory.postResult(temperature = temperature,
+            val call = retrofitFactory.postMood(
+                    token = "Bearer " + TokenStorage.token,
+                    temperature = temperature,
                     element_first = elements[0],
                     element_second = elements[1],
                     element_third = elements[2])
             call.enqueue(object : retrofit2.Callback<Unit> {
                 override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
                     if(response!!.isSuccessful) {
-                        Log.i("SelectEmotionActivity : ", "post 성공")
+                        Log.i("온도, 요소 제출 : ", "성공")
+                        Log.i("온도, 요소 제출 : ", "response code : " + response.code())
+                        Log.i("온도, 요소 제출 : ", "message : " + response.message())
                     }
                     else {
-                        Log.e("연결 실패 : ", "error code : " + response.code())
+                        Log.e("온도, 요소 제출 : ", "error code : " + response.code())
+                        Log.e("온도, 요소 제출 : ", "message : " + response.message())
                     }
                 }
 
@@ -75,17 +81,17 @@ class SelectElementActivity : AppCompatActivity() {
     private fun insertDataSet() : ArrayList<ElementAdapter.ElementVO> {
         return arrayListOf<ElementAdapter.ElementVO>(
                 ElementAdapter.ElementVO("음식",
-                        resources.getStringArray(R.array.element_foods).toCollection(ArrayList<String>())),
+                        resources.getStringArray(R.array.element_foods).toCollection(ArrayList())),
                 ElementAdapter.ElementVO("인간관계",
-                        resources.getStringArray(R.array.elements_relation).toCollection(ArrayList<String>())),
+                        resources.getStringArray(R.array.elements_relation).toCollection(ArrayList())),
                 ElementAdapter.ElementVO("학업",
-                        resources.getStringArray(R.array.elements_study).toCollection(ArrayList<String>())),
+                        resources.getStringArray(R.array.elements_study).toCollection(ArrayList())),
                 ElementAdapter.ElementVO("취미",
-                        resources.getStringArray(R.array.elements_hobby).toCollection(ArrayList<String>())),
+                        resources.getStringArray(R.array.elements_hobby).toCollection(ArrayList())),
                 ElementAdapter.ElementVO("건강",
-                        resources.getStringArray(R.array.elements_health).toCollection(ArrayList<String>())),
+                        resources.getStringArray(R.array.elements_health).toCollection(ArrayList())),
                 ElementAdapter.ElementVO("기타",
-                        resources.getStringArray(R.array.elements_etc).toCollection(ArrayList<String>())),
+                        resources.getStringArray(R.array.elements_etc).toCollection(ArrayList())),
         )
     }
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.*
 import com.inu.emotion.R
 import com.inu.emotion.mvvm.feature.common.TemperatureBar
+import com.inu.emotion.mvvm.global.TokenStorage
 import com.inu.emotion.mvvm.model.network.RetrofitFactory
 import retrofit2.Call
 import retrofit2.Response
@@ -50,14 +51,17 @@ class BettingTemperatureActivity : AppCompatActivity() {
             Toast.makeText(view?.context, "준비중입니다.", Toast.LENGTH_SHORT).show()
 
             val retrofitFactory = RetrofitFactory().create()
-            val call = retrofitFactory.postBetting(temperatureBar!!.progress)
+            val call = retrofitFactory.postBetting("Bearer " + TokenStorage.token, temperatureBar!!.progress)
             call.enqueue(object : retrofit2.Callback<Unit> {
                 override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
                     if(response!!.isSuccessful) {
-                        Log.i("SelectEmotionActivity : ", "post 성공")
+                        Log.i("베팅 요청 : ", "post 성공")
+                        Log.i("베팅 요청 : ", "response code : " + response.code())
+                        Log.i("베팅 요청 : ", "response message : " + response.message())
                     }
                     else {
-                        Log.e("연결 실패 : ", "error code : " + response.code())
+                        Log.e("베팅 요청 : ", "error code : " + response.code())
+                        Log.e("베팅 요청 : ", "response message : " + response.message())
                     }
                 }
 

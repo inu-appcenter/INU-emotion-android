@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.inu.emotion.R
 import com.inu.emotion.mvvm.feature.common.TemperatureBar
+import com.inu.emotion.mvvm.global.TokenStorage
 import com.inu.emotion.mvvm.model.network.ResultEntity
 import com.inu.emotion.mvvm.model.network.RetrofitFactory
 import retrofit2.Call
@@ -21,7 +22,7 @@ class ResultViewModel : ViewModel() {
 
     fun request(view: View) {
         val retrofitFactory = RetrofitFactory().create()
-        val call = retrofitFactory.getResult()
+        val call = retrofitFactory.getResult("Bearer " + TokenStorage.token)
         var resultBody : ResultEntity?
 
         call.enqueue(object : retrofit2.Callback<ResultEntity?> {
@@ -30,9 +31,9 @@ class ResultViewModel : ViewModel() {
                 Log.i("오늘의 온도 요청 : ", "성공")
                 Log.i("오늘의 온도 요청 res message : ", response.message())
                 Log.i("오늘의 온도 요청 res code : ", response.code().toString())
-                _temperatureProgress.value = resultBody!!.todayMoodAvg
+                _temperatureProgress.value = resultBody?.todayMoodAvg
                 _temperature.value = _temperatureProgress.value.toString() + "ºC"
-                Log.i("오늘의 온도 요청 : ", "server result - " + resultBody!!.elementRanking)
+                //Log.i("오늘의 온도 요청 : ", "server result - " + resultBody?.elementRanking)
             }
 
             override fun onFailure(call: Call<ResultEntity?>, t: Throwable?) {
