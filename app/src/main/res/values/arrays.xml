@@ -18,14 +18,14 @@
     </string-array>
     <string-array name="elements_study">
         <item>시험</item>
-        <item>과제/레포트</item>
+        <item>과제</item>
         <item>성적</item>
-        <item>공모전/대외활동</item>
+        <item>공모전</item>
         <item>자격증</item>
-        <item>기타</item>
+        <item>대외활동</item>
     </string-array>
     <string-array name="elements_hobby">
-        <item>영화/드라마</item>
+        <item>영화</item>
         <item>게임</item>
         <item>독서</item>
         <item>여행</item>
@@ -38,7 +38,7 @@
         <item>질병</item>
         <item>스트레스</item>
         <item>체중</item>
-        <item>기타</item>
+        <item>두통</item>
     </string-array>
     <string-array name="elements_etc">
         <item>업무</item>
@@ -46,6 +46,6 @@
         <item>교통</item>
         <item>행운</item>
         <item>불운</item>
-        <item>그냥</item>
+        <item>이유없음</item>
     </string-array>
 </resources>

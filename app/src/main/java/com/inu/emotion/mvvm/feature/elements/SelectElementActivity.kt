@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.R
 import com.inu.emotion.mvvm.global.TokenStorage
