@@ -6,8 +6,9 @@
     tools:context=".mvvm.feature.login.LoginActivity">
 
     <data>
+        <import type="android.view.View"/>
         <variable
-            name="result"
+            name="viewModel"
             type="com.inu.emotion.mvvm.feature.login.LoginViewModel" />
     </data>
 
@@ -84,7 +85,7 @@
             android:text="아이디 또는 비밀번호가 일치 하지 않습니다"
             android:textAlignment="center"
             android:textSize="14sp"
-            android:visibility="invisible"
+            android:visibility="@{viewModel.isSuccessful() ? View.INVISIBLE : View.VISIBLE}"
             />
 
         <TextView

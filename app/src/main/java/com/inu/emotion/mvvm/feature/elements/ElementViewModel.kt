@@ -30,6 +30,7 @@ class ElementViewModel(application: Application) : AndroidViewModel(application)
         call.enqueue(object : retrofit2.Callback<Unit> {
             override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
                 if(response!!.isSuccessful) {
+                    Log.i("온도, 요소 제출 : ", DataStorage.toString())
                     Log.i("온도, 요소 제출 : ", "성공")
                     Log.i("온도, 요소 제출 : ", "response code : " + response.code())
                     Log.i("온도, 요소 제출 : ", "message : " + response.message())

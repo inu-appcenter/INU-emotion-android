@@ -24,6 +24,8 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
         // 버튼 클릭
         findViewById<Button>(R.id.btn_login).setOnClickListener {
@@ -32,10 +34,10 @@ class LoginActivity : AppCompatActivity() {
             val inputPw = findViewById<EditText>(R.id.input_password).text.toString()
 
             // 로그인 요청
-            viewModel.requestLogin(binding.root, inputId, inputPw)
+            viewModel.requestLogin(inputId, inputPw) { finish() }
         }
     }
-    /*
+
     override fun onResume() {
         super.onResume()
         Thread {
@@ -45,5 +47,5 @@ class LoginActivity : AppCompatActivity() {
             }
             finish()
         }
-    }*/
+    }
 }
