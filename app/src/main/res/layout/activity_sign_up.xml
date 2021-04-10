@@ -5,13 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".mvvm.feature.login.LoginActivity">
 
-    <data>
-        <import type="android.view.View"/>
-        <variable
-            name="viewModel"
-            type="com.inu.emotion.mvvm.feature.login.LoginViewModel" />
-    </data>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -44,7 +37,7 @@
                 android:layout_marginTop="80dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="INU_temp"
+                android:text="회원 가입"
                 android:textColor="#707070"
                 android:textSize="36sp"
                 android:textAlignment="center"
@@ -79,39 +72,30 @@
                 android:textColor="#707070"
                 android:inputType="textPassword" />
 
-            <TextView
-                android:id="@+id/text_login"
+            <EditText
+                android:id="@+id/input_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#AE3535"
-                android:layout_marginTop="22dp"
+                android:paddingHorizontal="36dp"
+                android:layout_marginHorizontal="36dp"
+                android:paddingVertical="14dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/border_edit_text"
                 app:layout_constraintTop_toBottomOf="@+id/input_password"
-                android:text="아이디 또는 비밀번호가 일치 하지 않습니다"
-                android:textAlignment="center"
+                android:hint="닉네임"
                 android:textSize="14sp"
-                android:visibility="@{viewModel.isSuccessful() ? View.INVISIBLE : View.VISIBLE}" />
-
-            <TextView
-                android:id="@+id/text_seek"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="회원가입"
-                android:textAlignment="center"
-                android:textColor="#A2A2A2"
-                app:layout_constraintTop_toBottomOf="@+id/text_login"
-                android:layout_marginTop="11dp"
-                android:textSize="18sp" />
+                android:textColor="#707070"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="22dp"
                 android:layout_marginTop="50dp"
                 android:textColor="#FFFFFF"
-                app:layout_constraintTop_toBottomOf="@+id/text_seek"
+                app:layout_constraintTop_toBottomOf="@+id/input_name"
                 android:background="@drawable/img_background_button"
-                android:text="로그인"
+                android:text="가입 완료"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

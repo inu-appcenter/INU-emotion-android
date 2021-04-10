@@ -27,4 +27,10 @@ interface RetrofitService {
     @POST("auth/login")
     fun postLogin(@Field("email") id: String,
                   @Field("password") password: String) : Call<LoginEntity>
+
+    @FormUrlEncoded
+    @POST("auth/register")
+    fun postSignUp(@Field("email") id: String,
+                   @Field("nick") nickname: String,
+                   @Field("password") password: String) : Call<Unit>
 }

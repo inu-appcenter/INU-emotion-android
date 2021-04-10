@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InuEmotion"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.inu.emotion.mvvm.feature.splash.SplashActivity"
+        <activity android:name=".mvvm.feature.signup.SignUpActivity"></activity>
+        <activity
+            android:name=".mvvm.feature.splash.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,24 +22,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.inu.emotion.mvvm.feature.ranking.RankingActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.inu.emotion.mvvm.feature.graph.GraphActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.inu.emotion.mvvm.feature.elements.ElementActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.inu.emotion.mvvm.feature.today.ResultActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.inu.emotion.mvvm.feature.betting.BettingTemperatureActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.inu.emotion.mvvm.feature.login.LoginActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:screenOrientation="portrait"/>
-        <activity android:name="com.inu.emotion.mvvm.feature.emotion.EmotionActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".mvvm.feature.main.MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
+        <activity
+            android:name=".mvvm.feature.ranking.RankingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvvm.feature.graph.GraphActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvvm.feature.elements.ElementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvvm.feature.today.ResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvvm.feature.betting.BettingTemperatureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvvm.feature.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".mvvm.feature.emotion.EmotionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvvm.feature.main.MainActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
