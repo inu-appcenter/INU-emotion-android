@@ -31,6 +31,7 @@
         <activity android:name="com.inu.emotion.mvvm.feature.betting.BettingTemperatureActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.inu.emotion.mvvm.feature.login.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"/>
         <activity android:name="com.inu.emotion.mvvm.feature.emotion.EmotionActivity"
             android:screenOrientation="portrait"/>
