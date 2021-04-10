@@ -14,7 +14,7 @@ import retrofit2.Call
 import retrofit2.Response
 
 class LoginViewModel : ViewModel() {
-    private val _isSuccessful = MutableLiveData<Boolean>()
+    private val _isSuccessful = MutableLiveData(true)
     val isSuccessful: LiveData<Boolean> = _isSuccessful
 
     fun requestLogin(id: String, pw: String, onSuccess: ()->Any?) {

@@ -5,11 +5,18 @@ package com.inu.emotion.mvvm.global
  */
 object DataStorage {
     var temperature: Int = 50
-    val elements: ArrayList<String?> = ArrayList(3)
+    var elements: ArrayList<String?> = ArrayList()
 
     fun insertElements(elements: ArrayList<String?>) {
-        for(i in 0 until 3) {
-            this.elements[i] = elements[i]
-        }
+        this.elements = elements
+    }
+
+    override fun toString(): String {
+        return """
+            온도 : ${temperature}
+            요소1 : ${elements[0]}
+            요소2 : ${elements[1]}
+            요소3 : ${elements[2]}
+        """.trimIndent()
     }
 }
