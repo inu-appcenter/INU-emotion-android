@@ -21,7 +21,7 @@
         android:layout_marginTop="42dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1월 랭킹"
+        android:text="이번 달 랭킹"
         android:textSize="22sp"
         android:textColor="@color/black"
         android:textStyle="bold"

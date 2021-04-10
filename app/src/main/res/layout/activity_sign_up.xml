@@ -33,7 +33,7 @@
                 android:elevation="3dp"/>
 
             <TextView
-                android:id="@+id/title_login"
+                android:id="@+id/title_sign_up"
                 android:layout_marginTop="80dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 app:layout_constraintTop_toBottomOf="@id/app_center_logo" />
 
             <EditText
-                android:id="@+id/input_id"
+                android:id="@+id/input_new_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="36dp"
@@ -52,13 +52,13 @@
                 android:paddingVertical="14dp"
                 android:layout_marginTop="24dp"
                 android:background="@drawable/border_edit_text"
-                app:layout_constraintTop_toBottomOf="@+id/title_login"
+                app:layout_constraintTop_toBottomOf="@+id/title_sign_up"
                 android:hint="@string/id_hint"
                 android:textSize="14sp"
                 android:textColor="#707070"/>
 
             <EditText
-                android:id="@+id/input_password"
+                android:id="@+id/input_new_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -66,14 +66,14 @@
                 android:paddingHorizontal="36dp"
                 android:paddingVertical="14dp"
                 android:background="@drawable/border_edit_text"
-                app:layout_constraintTop_toBottomOf="@+id/input_id"
+                app:layout_constraintTop_toBottomOf="@+id/input_new_id"
                 android:hint="@string/password_hint"
                 android:textSize="14sp"
                 android:textColor="#707070"
                 android:inputType="textPassword" />
 
             <EditText
-                android:id="@+id/input_name"
+                android:id="@+id/input_new_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="36dp"
@@ -81,7 +81,7 @@
                 android:paddingVertical="14dp"
                 android:layout_marginTop="24dp"
                 android:background="@drawable/border_edit_text"
-                app:layout_constraintTop_toBottomOf="@+id/input_password"
+                app:layout_constraintTop_toBottomOf="@+id/input_new_password"
                 android:hint="닉네임"
                 android:textSize="14sp"
                 android:textColor="#707070"/>
@@ -93,7 +93,7 @@
                 android:layout_marginHorizontal="22dp"
                 android:layout_marginTop="50dp"
                 android:textColor="#FFFFFF"
-                app:layout_constraintTop_toBottomOf="@+id/input_name"
+                app:layout_constraintTop_toBottomOf="@+id/input_new_name"
                 android:background="@drawable/img_background_button"
                 android:text="가입 완료"
                 android:textSize="18sp"

@@ -20,9 +20,15 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         findViewById<Button>(R.id.btn_sign_up).setOnClickListener {
-            val id = findViewById<TextView>(R.id.input_id).toString()
-            val pw = findViewById<TextView>(R.id.input_password).toString()
-            val nickname = findViewById<TextView>(R.id.input_name).toString()
+            val id = findViewById<TextView>(R.id.input_new_id).text.toString()
+            val pw = findViewById<TextView>(R.id.input_new_password).text.toString()
+            val nickname = findViewById<TextView>(R.id.input_new_name).text.toString()
+
+            if(nickname.length > 8) {
+                showToast("닉네임은 8자 이하여야 합니다.")
+                findViewById<TextView>(R.id.input_new_name).requestFocus()
+                return@setOnClickListener
+            }
 
             val retrofitFactory = RetrofitFactory().create()
             val call = retrofitFactory.postSignUp(id, nickname, pw)
@@ -33,28 +39,27 @@ class SignUpActivity : AppCompatActivity() {
                         Log.i("회원 가입 요청 : ", "성공")
                         Log.i("회원 가입 요청 : ", "response code : " + response.code())
                         Log.i("회원 가입 요청 response message : ", response.message())
-                        showToast(true)
+                        showToast("회원 가입 성공")
                         finish()
                     } else {
                         Log.e("회원 가입 요청 : ", "error code : " + response.code())
                         Log.e("회원 가입 요청 res message : ", response.message())
                         Log.i("회원 가입 요청 response message : ", result?.message.toString())
-                        showToast(false)
+                        showToast("회원 가입 실패")
                     }
                 }
 
                 override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
                     t.printStackTrace()
                     Log.e("회원 가입 요청 : ", "연결 실패(onFailure)")
-                    showToast(false)
+                    showToast("서버와의 연결이 원활하지 않습니다.")
                 }
             })
         }
     }
 
-    fun showToast(isSuccessful: Boolean) {
-        if(isSuccessful) Toast.makeText(this, "회원 가입 성공", Toast.LENGTH_SHORT).show()
-        else Toast.makeText(this, "회원 가입 실패", Toast.LENGTH_SHORT).show()
+    fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     data class SignUpResponse(val message: String?)
