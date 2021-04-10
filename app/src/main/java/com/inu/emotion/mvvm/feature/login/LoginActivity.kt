@@ -1,5 +1,6 @@
 package com.inu.emotion.mvvm.feature.login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.inu.emotion.R
 import com.inu.emotion.databinding.ActivityLoginBinding
+import com.inu.emotion.mvvm.feature.signup.SignUpActivity
 import com.inu.emotion.mvvm.global.TokenStorage
 import com.inu.emotion.mvvm.model.network.LoginEntity
 import com.inu.emotion.mvvm.model.network.RetrofitFactory
@@ -27,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        // 버튼 클릭
+        // 로그인 버튼 클릭
         findViewById<Button>(R.id.btn_login).setOnClickListener {
             // id / pw 얻기
             val inputId = findViewById<EditText>(R.id.input_id).text.toString()
@@ -35,6 +37,12 @@ class LoginActivity : AppCompatActivity() {
 
             // 로그인 요청
             viewModel.requestLogin(inputId, inputPw) { finish() }
+        }
+
+        // 회원 가입 버튼 클릭
+        findViewById<TextView>(R.id.text_link_sign_up).setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -80,7 +80,7 @@
                 android:inputType="textPassword" />
 
             <TextView
-                android:id="@+id/text_login"
+                android:id="@+id/text_login_fail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#AE3535"
@@ -92,13 +92,13 @@
                 android:visibility="@{viewModel.isSuccessful() ? View.INVISIBLE : View.VISIBLE}" />
 
             <TextView
-                android:id="@+id/text_seek"
+                android:id="@+id/text_link_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="회원가입"
                 android:textAlignment="center"
                 android:textColor="#A2A2A2"
-                app:layout_constraintTop_toBottomOf="@+id/text_login"
+                app:layout_constraintTop_toBottomOf="@+id/text_login_fail"
                 android:layout_marginTop="11dp"
                 android:textSize="18sp" />
 
@@ -109,7 +109,7 @@
                 android:layout_marginHorizontal="22dp"
                 android:layout_marginTop="50dp"
                 android:textColor="#FFFFFF"
-                app:layout_constraintTop_toBottomOf="@+id/text_seek"
+                app:layout_constraintTop_toBottomOf="@+id/text_link_sign_up"
                 android:background="@drawable/img_background_button"
                 android:text="로그인"
                 android:textSize="18sp"

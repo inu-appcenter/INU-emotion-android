@@ -1,5 +1,6 @@
 package com.inu.emotion.mvvm.model.network
 
+import com.inu.emotion.mvvm.feature.signup.SignUpResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -32,5 +33,5 @@ interface RetrofitService {
     @POST("auth/register")
     fun postSignUp(@Field("email") id: String,
                    @Field("nick") nickname: String,
-                   @Field("password") password: String) : Call<Unit>
+                   @Field("password") password: String) : Call<SignUpResponse>
 }
