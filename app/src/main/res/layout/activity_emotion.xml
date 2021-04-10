@@ -13,7 +13,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".mvvm.feature.emotion.SelectEmotionActivity">
+        tools:context=".mvvm.feature.emotion.EmotionActivity">
 
         <ImageView
             android:id="@+id/logo"

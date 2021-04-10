@@ -10,9 +10,10 @@ import androidx.databinding.DataBindingUtil
 import com.inu.emotion.R
 import com.inu.emotion.databinding.ActivityEmotionBinding
 import com.inu.emotion.mvvm.feature.common.TemperatureBar
-import com.inu.emotion.mvvm.feature.elements.SelectElementActivity
+import com.inu.emotion.mvvm.feature.elements.ElementActivity
+import com.inu.emotion.mvvm.global.DataStorage
 
-class SelectEmotionActivity : AppCompatActivity() {
+class EmotionActivity : AppCompatActivity() {
     var temperatureBar: TemperatureBar? = null
     private lateinit var binding: ActivityEmotionBinding
     private val viewModel: EmotionViewModel by viewModels()
@@ -32,8 +33,8 @@ class SelectEmotionActivity : AppCompatActivity() {
 
         // 확인 버튼 클릭
         findViewById<Button>(R.id.btn_select_temperature).setOnClickListener {
-            val intent = Intent(it.context, SelectElementActivity::class.java)
-            intent.putExtra("temperature", temperatureBar!!.progress)
+            val intent = Intent(it.context, ElementActivity::class.java)
+            DataStorage.temperature = temperatureBar!!.progress
             this.startActivityForResult(intent, 10)
         }
     }

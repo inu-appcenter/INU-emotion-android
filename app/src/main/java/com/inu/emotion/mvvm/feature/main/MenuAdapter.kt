@@ -11,13 +11,13 @@ import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.R
 import com.inu.emotion.mvvm.feature.betting.BettingTemperatureActivity
-import com.inu.emotion.mvvm.feature.emotion.SelectEmotionActivity
+import com.inu.emotion.mvvm.feature.emotion.EmotionActivity
 import com.inu.emotion.mvvm.feature.login.LoginActivity
 import com.inu.emotion.mvvm.feature.today.ResultActivity
 
 class MenuAdapter(private val menuData: ArrayList<MenuVO>)
     : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
-    val layoutIds = arrayListOf(SelectEmotionActivity::class.java, ResultActivity::class.java, BettingTemperatureActivity::class.java, null, LoginActivity::class.java)
+    val layoutIds = arrayListOf(EmotionActivity::class.java, ResultActivity::class.java, BettingTemperatureActivity::class.java, null, LoginActivity::class.java)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)

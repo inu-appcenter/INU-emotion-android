@@ -33,7 +33,17 @@ class LoginActivity : AppCompatActivity() {
 
             // 로그인 요청
             viewModel.requestLogin(binding.root, inputId, inputPw)
-            if(TokenStorage.token != null) finish() // TODO : 스레드 시간 차 문제 때문에 종료가 안 되는 버그가 있음.
         }
     }
+    /*
+    override fun onResume() {
+        super.onResume()
+        Thread {
+            // 로그인 성공시 메인 화면으로 돌아가기
+            while(true) {
+                if(TokenStorage.token != null) finish()
+            }
+            finish()
+        }
+    }*/
 }

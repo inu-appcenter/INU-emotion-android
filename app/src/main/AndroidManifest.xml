@@ -24,7 +24,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.inu.emotion.mvvm.feature.graph.GraphActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.inu.emotion.mvvm.feature.elements.SelectElementActivity"
+        <activity android:name="com.inu.emotion.mvvm.feature.elements.ElementActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.inu.emotion.mvvm.feature.today.ResultActivity"
             android:screenOrientation="portrait"/>
@@ -32,7 +32,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.inu.emotion.mvvm.feature.login.LoginActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.inu.emotion.mvvm.feature.emotion.SelectEmotionActivity"
+        <activity android:name="com.inu.emotion.mvvm.feature.emotion.EmotionActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".mvvm.feature.main.MainActivity"
             android:screenOrientation="portrait">
