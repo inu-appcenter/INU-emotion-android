@@ -27,8 +27,6 @@ class SignUpActivity : AppCompatActivity() {
             val retrofitFactory = RetrofitFactory().create()
             val call = retrofitFactory.postSignUp(id, nickname, pw)
             call.enqueue(object : retrofit2.Callback<SignUpResponse> {
-
-
                 override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
                     var result: SignUpResponse? = response.body()
                     if (response.isSuccessful) {
@@ -58,6 +56,6 @@ class SignUpActivity : AppCompatActivity() {
         if(isSuccessful) Toast.makeText(this, "회원 가입 성공", Toast.LENGTH_SHORT).show()
         else Toast.makeText(this, "회원 가입 실패", Toast.LENGTH_SHORT).show()
     }
-}
 
-data class SignUpResponse(val message: String?)
+    data class SignUpResponse(val message: String?)
+}

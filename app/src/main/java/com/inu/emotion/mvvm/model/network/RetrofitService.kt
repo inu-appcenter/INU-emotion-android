@@ -1,12 +1,15 @@
 package com.inu.emotion.mvvm.model.network
 
-import com.inu.emotion.mvvm.feature.signup.SignUpResponse
+import com.inu.emotion.mvvm.feature.signup.SignUpActivity
 import retrofit2.Call
 import retrofit2.http.*
 
 interface RetrofitService {
     @GET("mood")
     fun getResult(@Header("authorization") token: String?): Call<ResultEntity?>
+
+    @GET("main")
+    fun getUserInfo(@Header("authorization") token: String?): Call<UserEntity?>
 
     @FormUrlEncoded
     @POST("mood")
@@ -33,5 +36,5 @@ interface RetrofitService {
     @POST("auth/register")
     fun postSignUp(@Field("email") id: String,
                    @Field("nick") nickname: String,
-                   @Field("password") password: String) : Call<SignUpResponse>
+                   @Field("password") password: String) : Call<SignUpActivity.SignUpResponse>
 }
