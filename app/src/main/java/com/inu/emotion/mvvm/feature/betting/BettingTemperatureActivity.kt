@@ -51,7 +51,7 @@ class BettingTemperatureActivity : AppCompatActivity() {
             Toast.makeText(view?.context, "준비중입니다.", Toast.LENGTH_SHORT).show()
 
             val retrofitFactory = RetrofitFactory().create()
-            val call = retrofitFactory.postBetting("Bearer " + TokenStorage.token, temperatureBar!!.progress)
+            val call = retrofitFactory.postBetting(TokenStorage.token, temperatureBar!!.progress)
             call.enqueue(object : retrofit2.Callback<Unit> {
                 override fun onResponse(call: Call<Unit>?, response: Response<Unit>?) {
                     if(response!!.isSuccessful) {

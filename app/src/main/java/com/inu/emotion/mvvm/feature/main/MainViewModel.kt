@@ -17,7 +17,7 @@ class MainViewModel: ViewModel() {
 
     fun getAndSetName() {
         val retrofitFactory = RetrofitFactory().create()
-        val call = retrofitFactory.getUserInfo("Bearer " + TokenStorage.token)
+        val call = retrofitFactory.getUserInfo(TokenStorage.token)
         call.enqueue(object : retrofit2.Callback<UserEntity?> {
             override fun onResponse(call: Call<UserEntity?>, response: Response<UserEntity?>) {
                 val result = response.body()

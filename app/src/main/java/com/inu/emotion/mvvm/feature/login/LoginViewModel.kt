@@ -28,7 +28,7 @@ class LoginViewModel : ViewModel() {
                 _isSuccessful.value = response!!.isSuccessful
                 if (response.isSuccessful) {
                     result = response.body()
-                    TokenStorage.token = result?.token
+                    TokenStorage.token = "Bearer " + result?.token
                     Log.i("로그인 요청 : ", "login 성공")
                     Log.i("로그인 요청 : ", "response code : " + response.code())
                     Log.i("로그인 요청 response message : ", response.message())

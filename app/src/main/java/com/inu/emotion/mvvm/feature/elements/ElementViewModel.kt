@@ -22,7 +22,7 @@ class ElementViewModel(application: Application) : AndroidViewModel(application)
     fun postMood() {
         val retrofitFactory = RetrofitFactory().create()
         val call = retrofitFactory.postMood(
-                token = "Bearer " + TokenStorage.token,
+                token = TokenStorage.token,
                 temperature = DataStorage.temperature,
                 element_first = DataStorage.elements[0],
                 element_second = DataStorage.elements[1],

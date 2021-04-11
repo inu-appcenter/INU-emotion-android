@@ -32,6 +32,7 @@ class SignUpActivity : AppCompatActivity() {
 
             val retrofitFactory = RetrofitFactory().create()
             val call = retrofitFactory.postSignUp(id, nickname, pw)
+            Log.i("회원 가입 요청 : ", "id, nickname, password : $id, $pw, $nickname")
             call.enqueue(object : retrofit2.Callback<SignUpResponse> {
                 override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
                     var result: SignUpResponse? = response.body()

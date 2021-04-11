@@ -22,7 +22,7 @@ class ResultViewModel : ViewModel() {
 
     fun request(view: View) {
         val retrofitFactory = RetrofitFactory().create()
-        val call = retrofitFactory.getResult("Bearer " + TokenStorage.token)
+        val call = retrofitFactory.getResult(TokenStorage.token)
         var resultBody : ResultEntity?
 
         call.enqueue(object : retrofit2.Callback<ResultEntity?> {

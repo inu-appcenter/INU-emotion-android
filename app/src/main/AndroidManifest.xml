@@ -26,7 +26,7 @@
             android:name=".mvvm.feature.ranking.RankingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".mvvm.feature.graph.GraphActivity"
+            android:name=".mvvm.feature.calendar.CalendarActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".mvvm.feature.elements.ElementActivity"
