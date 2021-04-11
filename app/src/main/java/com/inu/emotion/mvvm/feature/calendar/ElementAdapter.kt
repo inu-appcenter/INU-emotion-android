@@ -1,26 +1,27 @@
 package com.inu.emotion.mvvm.feature.calendar
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.inu.emotion.R
 
-class ElementAdapter : RecyclerView.Adapter<ElementAdapter.ViewHolder> {
+class ElementAdapter(private val elementList: ArrayList<String?>) : RecyclerView.Adapter<ElementAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        val view = LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_calendar_element, parent, false)
+
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.ranking.text = elementList[position]
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = elementList.size
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        init {
-            //val ranking: TextView = view.findViewById(R.id.)
-        }
+        val ranking: TextView = view.findViewById(R.id.tv_item_element)
     }
 }

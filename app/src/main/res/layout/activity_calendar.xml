@@ -71,13 +71,13 @@
             android:text="감정 요소"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_weight="1"/>
+            android:textSize="18sp"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/calendar_elements"
+            android:id="@+id/calendar_element_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="22dp"
             android:background="#F6F6F6"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:spanCount="7"/>

@@ -2,6 +2,7 @@ package com.inu.emotion.mvvm.feature.calendar
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.R
@@ -13,12 +14,21 @@ class CalendarActivity : AppCompatActivity() {
 
         val arrayList = getDummyData()
 
-        val recyclerView = findViewById<RecyclerView>(R.id.calendar_recyclerview)
-        recyclerView.addItemDecoration(CalendarItemDecoration(7,
+        // 캘린더 RecyclerView setting
+        val calendarRecyclerView = findViewById<RecyclerView>(R.id.calendar_recyclerview)
+        calendarRecyclerView.addItemDecoration(CalendarItemDecoration(7,
                 resources.getDimensionPixelSize(R.dimen.interval_calendar_item),
                 false))
-        (recyclerView.layoutManager as GridLayoutManager).apply { spanCount = 7 }
-        recyclerView.adapter = CalendarAdapter(arrayList)
+        (calendarRecyclerView.layoutManager as GridLayoutManager).apply { spanCount = 7 }
+        calendarRecyclerView.adapter = CalendarAdapter(arrayList)
+
+        // 감정 요소 RecyclerView setting
+        val dummyList: ArrayList<String?> = arrayListOf("집밥", "가족", "드라마")
+        val elementRecyclerView = findViewById<RecyclerView>(R.id.calendar_element_recyclerview)
+        elementRecyclerView.adapter = ElementAdapter(dummyList)
+
+        // undo button set onClickListener
+        findViewById<ImageView>(R.id.calendar_undo).setOnClickListener { finish() }
     }
 
     fun getDummyData(): ArrayList<CalendarAdapter.CalendarVO> {

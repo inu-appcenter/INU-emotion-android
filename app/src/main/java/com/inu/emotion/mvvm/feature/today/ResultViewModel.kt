@@ -3,6 +3,7 @@ package com.inu.emotion.mvvm.feature.today
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -33,12 +34,12 @@ class ResultViewModel : ViewModel() {
                 Log.i("오늘의 온도 요청 res code : ", response.code().toString())
                 _temperatureProgress.value = resultBody?.todayMoodAvg
                 _temperature.value = _temperatureProgress.value.toString() + "ºC"
-                //Log.i("오늘의 온도 요청 : ", "server result - " + resultBody?.elementRanking)
             }
 
             override fun onFailure(call: Call<ResultEntity?>, t: Throwable?) {
                 Log.i("오늘의 온도 요청 : ", "fail")
                 t?.printStackTrace()
+                Toast.makeText(view.context, "서버와 연결이 원활하지 않습니다.", Toast.LENGTH_SHORT).show()
             }
         })
     }
