@@ -6,5 +6,6 @@
     <dimen name="bar_textSize">20sp</dimen>
     <dimen name="item_decoration_space">15dp</dimen>
     <dimen name="interval_emotion">35dp</dimen>
+    <dimen name="interval_calendar_item">16dp</dimen>
 
 </resources>

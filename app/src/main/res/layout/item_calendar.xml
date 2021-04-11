@@ -10,13 +10,14 @@
         android:id="@+id/tv_item_calendar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="32dp"
         android:layout_height="32dp"
         tools:text="1"
         android:textSize="16sp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:background="@drawable/item_calendar_background"
-        android:backgroundTint="@color/under_20"/>
+        android:background="@drawable/item_calendar_background"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
