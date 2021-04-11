@@ -11,13 +11,14 @@ import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
 import com.inu.emotion.R
 import com.inu.emotion.mvvm.feature.betting.BettingTemperatureActivity
+import com.inu.emotion.mvvm.feature.calendar.CalendarActivity
 import com.inu.emotion.mvvm.feature.emotion.EmotionActivity
 import com.inu.emotion.mvvm.feature.login.LoginActivity
 import com.inu.emotion.mvvm.feature.today.ResultActivity
 
 class MenuAdapter(private val menuData: ArrayList<MenuVO>)
     : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
-    val layoutIds = arrayListOf(EmotionActivity::class.java, ResultActivity::class.java, BettingTemperatureActivity::class.java, null, LoginActivity::class.java)
+    val layoutIds = arrayListOf(EmotionActivity::class.java, ResultActivity::class.java, BettingTemperatureActivity::class.java, CalendarActivity::class.java, LoginActivity::class.java)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -32,11 +33,8 @@ class MenuAdapter(private val menuData: ArrayList<MenuVO>)
         holder.tvMenu?.text = menuData[position].menu
         holder.setView.setOnClickListener{
             val layoutId = layoutIds[position]
-            if(layoutId != null) {
-                val intent = Intent(it.context, layoutId)
-                it.context.startActivity(intent)
-            }
-            else Toast.makeText(it.context, "준비중입니다.", Toast.LENGTH_SHORT).show()
+            val intent = Intent(it.context, layoutId)
+            it.context.startActivity(intent)
         }
     }
 
