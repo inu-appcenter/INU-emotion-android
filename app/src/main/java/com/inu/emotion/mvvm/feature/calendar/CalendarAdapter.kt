@@ -31,7 +31,7 @@ class CalendarAdapter(private val days: Int,private val startDay: Int) : Recycle
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_menu, parent, false)
+                .inflate(R.layout.item_calendar, parent, false)
 
         return ViewHolder(view)
     }
